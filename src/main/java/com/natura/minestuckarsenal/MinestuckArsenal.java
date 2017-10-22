@@ -1,21 +1,17 @@
 package com.natura.minestuckarsenal;
 
-import com.mraof.minestuck.item.MinestuckItems;
-import com.natura.minestuckarsenal.client.ModelManager;
 import com.natura.minestuckarsenal.item.MinestuckArsenalItems;
 import com.natura.minestuckarsenal.proxy.CommonProxy;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod(modid = MinestuckArsenal.MODID, name = MinestuckArsenal.MODNAME, version = MinestuckArsenal.VERSION, useMetadata = true)
 public class MinestuckArsenal {
@@ -30,23 +26,26 @@ public class MinestuckArsenal {
     @Mod.Instance(MODID)
     public static MinestuckArsenal instance;
 
-    @Mod.EventHandler
+    @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-    	MinecraftForge.EVENT_BUS.register(MinestuckItems.class);
+    	
     	proxy.preInit();
+    	MinecraftForge.EVENT_BUS.register(MinestuckArsenalItems.class);
+    	LootTableList.register(new ResourceLocation("minestuckarsenal:inject/medium_addon"));
+    	
     }
     
 
-    @Mod.EventHandler
+    @EventHandler
     public void init(FMLInitializationEvent e) {
     	AlchemyRecipes.registerVanillaRecipes();
     	AlchemyRecipes.registerMinestuckRecipes();
     	AlchemyRecipes.registerModRecipes();
-    	
+    	MinecraftForge.EVENT_BUS.register(LootTableEventHandler.class);
         proxy.init();
     }
 
-    @Mod.EventHandler
+    @EventHandler
     public void postInit(FMLPostInitializationEvent e) {
         proxy.postInit();
     }

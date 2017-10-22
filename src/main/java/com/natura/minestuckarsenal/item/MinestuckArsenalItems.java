@@ -1,11 +1,13 @@
 package com.natura.minestuckarsenal.item;
 
+import com.mraof.minestuck.item.MinestuckItems;
 import com.mraof.minestuck.item.weapon.ItemCandyWeapon;
 import com.mraof.minestuck.item.weapon.ItemDualWeapon;
 import com.mraof.minestuck.item.weapon.ItemPogoWeapon;
 import com.mraof.minestuck.item.weapon.ItemWeapon;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -25,6 +27,10 @@ public class MinestuckArsenalItems {
 	
 	//sickleKind
 	public static Item babysFirstThresher = new ItemWeapon(250, 5, -2.4D, 12, "babysFirstThresher").setRegistryName("babys_first_thresher");
+	public static Item derseReaper = new ItemWeapon(200, 4, -2.4D, 12, "derseReaper").setRegistryName("derse_reaper");
+	public static Item prospitReaper = new ItemWeapon(200, 4, -2.4D, 12, "prospitReaper").setRegistryName("prospit_reaper");
+	public static Item hemeoreaper = new ItemWeapon(550, 6, -2.4D, 15, "hemeoreaper").setRegistryName("hemeoreaper");
+	
 	
 	//hammerKind
 	public static Item wrinklefucker = new ItemPogoWeapon(500, 9.0D, -2.8D, 12, "wrinklefucker", 0.4).setRegistryName("wrinklefucker");
@@ -50,8 +56,8 @@ public class MinestuckArsenalItems {
 	public static Item goldTrident = new ItemWeapon(450, 7, -2.5D, 10, "goldTrident").setRegistryName("gold_trident");
 	
 	//2x3dentKind
-	public static Item posiedonsEntente = new ItemWeapon(650, 8, -2.6D, 10, "poseidonsEntente").setRegistryName("poseidons_entente");
-	public static Item imperialFork = new ItemWeapon(1200, 10, -2.6D, 12, "imperialFork").setRegistryName("imperialFork");
+	public static Item poseidonsEntente = new ItemWeapon(650, 8, -2.6D, 10, "poseidonsEntente").setRegistryName("poseidons_entente");
+	public static Item imperialFork = new ItemWeapon(1200, 10, -2.6D, 12, "emperialFork").setRegistryName("emperial_fork");
 	
 	//makeupKind
 	public static Item lipstickChainsaw = new ItemDualWeapon(250, 1.0D, 5.0D, -1.5D,-2.5D, 10, "lipstickChainsaw").setRegistryName("lipstick_chainsaw");
@@ -65,7 +71,7 @@ public class MinestuckArsenalItems {
 	
 	//lanceKind
 	public static Item joustingLance = new ItemWeapon(250, 5.0D, -2.8D, 6, "joustingLance").setRegistryName("jousting_lance");
-	public static Item fiduspawnLance = new ItemWeapon(100, 4.0D, -2.8D, 5, "fiduspawnLance").setRegistryName("fiduspawnLance");
+	public static Item fiduspawnLance = new ItemWeapon(100, 4.0D, -2.8D, 5, "fiduspawnLance").setRegistryName("fiduspawn_lance");
 	public static Item cigaretteHolderLance = new ItemWeapon(450, 6.0D, -2.8D, 8, "cigaretteLance").setRegistryName("cigarette_lance");
 	public static Item rocketPopLance = new ItemCandyWeapon(500, 6.0D, -2.8D, 10, "rocketPopLance").setRegistryName("rocketpop_lance");
 	
@@ -90,12 +96,23 @@ public class MinestuckArsenalItems {
 	
 	//thrwstrKind
 	
-	
+	//Food
+	public static Item appleJuice = new ItemArsenalBeverage("appleJuice").setRegistryName("apple_juice");
+	public static Item scottyDog = new ItemFood(2, 0.4F, false).setRegistryName("scotty_dog").setUnlocalizedName("scottyDog").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item licoriceGummyBear = new ItemFood(2, 0.4F, false).setRegistryName("licorice_gummy_bear").setUnlocalizedName("licoriceGummyBear").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item licoriceFish = new ItemFood(2, 0.4F, false).setRegistryName("licorice_fish").setUnlocalizedName("licoriceFish").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item cottonCandy = new ItemFood(4, 0.5F, false).setRegistryName("cotton_candy").setUnlocalizedName("cottonCandy").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item cuttlefish = new ItemFood(5, 0.5F, false).setRegistryName("cuttlefish").setUnlocalizedName("cuttlefish").setCreativeTab(MinestuckItems.tabMinestuck);
+
 	//Other
-	public static Item clothesIron = new Item().setRegistryName("clothes_iron").setUnlocalizedName("clothesIron");
-	public static Item barbasol = new Item().setRegistryName("barbasol").setUnlocalizedName("barbasol");
-	public static Item magicCueball = new Item().setRegistryName("magic_cueball").setUnlocalizedName("magicCueball");
-	public static Item fridgeMagnet = new Item().setRegistryName("fridge_magnet").setUnlocalizedName("fridgeMagnet");
+	public static Item clothesIron = new Item().setRegistryName("clothes_iron").setUnlocalizedName("clothesIron").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item barbasol = new Item().setRegistryName("barbasol").setUnlocalizedName("barbasol").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item magicCueball = new Item().setRegistryName("magic_cueball").setUnlocalizedName("magicCueball").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item fridgeMagnet = new Item().setRegistryName("fridge_magnet").setUnlocalizedName("fridgeMagnet").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item hostPlush = new Item().setRegistryName("host_plush").setUnlocalizedName("hostPlush").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item magicEightBall = new Item().setRegistryName("magic_eight_ball").setUnlocalizedName("magicEightBall").setCreativeTab(MinestuckItems.tabMinestuck);
+
+	
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
@@ -112,6 +129,9 @@ public class MinestuckArsenalItems {
 		
 		//sickleKind
 		registry.register(babysFirstThresher);
+		registry.register(derseReaper);
+		registry.register(prospitReaper);
+		registry.register(hemeoreaper);
 		
 		//hammerKind
 		registry.register(wrinklefucker);
@@ -128,7 +148,7 @@ public class MinestuckArsenalItems {
 		registry.register(goldTrident);
 		
 		//2x3dentKind
-		registry.register(posiedonsEntente);
+		registry.register(poseidonsEntente);
 		registry.register(imperialFork);
 		
 		//makeupKind
@@ -137,6 +157,8 @@ public class MinestuckArsenalItems {
 		//lanceKind
 		registry.register(joustingLance);
 		registry.register(fiduspawnLance);
+		registry.register(cigaretteHolderLance);
+		registry.register(rocketPopLance);
 		
 		//batKind
 		registry.register(woodenBat);
@@ -149,11 +171,21 @@ public class MinestuckArsenalItems {
 		//whipKind
 		registry.register(leatherWhip);
 		
+		//food
+		registry.register(appleJuice);
+		registry.register(scottyDog);
+		registry.register(licoriceFish);
+		registry.register(licoriceGummyBear);
+		registry.register(cottonCandy);
+		registry.register(cuttlefish);
+		
 		//other
 		registry.register(clothesIron);
 		registry.register(barbasol);
 		registry.register(magicCueball);
 		registry.register(fridgeMagnet);
+		registry.register(hostPlush);
+		registry.register(magicEightBall);
 	}
 	
 }

@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minestuckarsenal:items/thorns_of_oglogoth"
+    }
+}

@@ -42,6 +42,9 @@ public class ModelManager {
 		register(brokenScarletRibbitar);
 		
 		register(babysFirstThresher);
+		register(derseReaper);
+		register(prospitReaper);
+		register(hemeoreaper);
 		
 		register(wrinklefucker);
 		
@@ -54,7 +57,7 @@ public class ModelManager {
 		register(silverTrident);
 		register(goldTrident);
 		
-		register(posiedonsEntente);
+		register(poseidonsEntente);
 		register(imperialFork);
 		
 		register(joustingLance);
@@ -67,22 +70,28 @@ public class ModelManager {
 		
 		register(leatherWhip);
 		
-		register(nepetaClaws);
 		ModelLoader.registerItemVariants(nepetaClaws, new ResourceLocation("minestuckarsenal:nepeta_claws_sheathed"), new ResourceLocation("minestuckarsenal:nepeta_claws_drawn"));
 		ModelLoader.setCustomMeshDefinition(nepetaClaws, new DualWeaponDefinition(nepetaClaws));
-		register(blueClaws);
+		
 		ModelLoader.registerItemVariants(blueClaws, new ResourceLocation("minestuckarsenal:blue_claws_sheathed"), new ResourceLocation("minestuckarsenal:blue_claws_drawn"));
 		ModelLoader.setCustomMeshDefinition(blueClaws, new DualWeaponDefinition(blueClaws));
 
-		
-		register(lipstickChainsaw);
-		ModelLoader.registerItemVariants(lipstickChainsaw, new ResourceLocation("minestuckarsenal:lipstick"), new ResourceLocation("minestuckarsenal:chainsaw"));
-		ModelLoader.setCustomMeshDefinition(lipstickChainsaw, new ChainsawDefinition(lipstickChainsaw));
+		ModelLoader.registerItemVariants(lipstickChainsaw, new ResourceLocation("minestuckarsenal:lipstick_chainsaw_sheathed"), new ResourceLocation("minestuckarsenal:lipstick_chainsaw_drawn"));
+		ModelLoader.setCustomMeshDefinition(lipstickChainsaw, new DualWeaponDefinition(lipstickChainsaw));
 
+		register(appleJuice);
+		register(scottyDog);
+		register(licoriceFish);
+		register(licoriceGummyBear);
+		register(cottonCandy);
+		register(cuttlefish);
+		
 		register(barbasol);
 		register(clothesIron);
 		register(magicCueball);
 		register(fridgeMagnet);
+		register(hostPlush);
+		register(magicEightBall);
 		
 	}
 	
@@ -102,13 +111,12 @@ public class ModelManager {
 		{
 			if(((ItemDualWeapon)this.item).IsDrawn(stack)){
 				
-				return new ModelResourceLocation("minestuckarsenal:" + ((ItemDualWeapon)this.item).Prefex + "_drawn","inventory");
+				return new ModelResourceLocation(item.getRegistryName() + "_drawn","inventory");
 			}else
-				return new ModelResourceLocation("minestuckarsenal:" + ((ItemDualWeapon)this.item).Prefex + "_sheathed","inventory");
+				return new ModelResourceLocation(item.getRegistryName() + "_sheathed","inventory");
 			
 		}
-	}
-	
+	}	
 	private static class ChainsawDefinition implements ItemMeshDefinition
 	{
 		private Item item;

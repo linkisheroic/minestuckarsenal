@@ -30,9 +30,18 @@ public class AlchemyRecipes {
 		
 		GristRegistry.addGristConversion(new ItemStack(wrinklefucker), false, new GristSet(new GristType[] {GristType.Build, GristType.Shale, GristType.Tar}, new int[] {55, 44, 66}));
 	
+		GristRegistry.addGristConversion(new ItemStack(hemeoreaper), false, new GristSet(new GristType[] {GristType.Build, GristType.Rust, GristType.Garnet, GristType.Iodine}, new int[] {250, 85, 75, 24}));
+		
+		GristRegistry.addGristConversion(new ItemStack(joustingLance), false, new GristSet(GristType.Build, 15));
+		GristRegistry.addGristConversion(new ItemStack(fiduspawnLance), false, new GristSet(new GristType[] {GristType.Build, GristType.Tar, GristType.Shale}, new int[] {30, 22, 16}));
+		
+		GristRegistry.addGristConversion(new ItemStack(hostPlush), false, new GristSet(GristType.Build, 5));
+		
 		CombinationRegistry.addCombination(new ItemStack(MinestuckItems.katana), new ItemStack(Items.PAPER), CombinationRegistry.MODE_AND, new ItemStack(paperSword));
 		CombinationRegistry.addCombination(new ItemStack(brokenRoyalDeringer), new ItemStack(magicCueball), CombinationRegistry.MODE_AND, new ItemStack(MinestuckItems.caledfwlch));
 		
+		CombinationRegistry.addCombination(new ItemStack(MinestuckItems.homesSmellYaLater), new ItemStack(MinestuckItems.minestuckBucket, 2), CombinationRegistry.MODE_AND, new ItemStack(hemeoreaper));
+		CombinationRegistry.addCombination(new ItemStack(hostPlush), new ItemStack(joustingLance), CombinationRegistry.MODE_AND, new ItemStack(fiduspawnLance));
 	
 	}
 	

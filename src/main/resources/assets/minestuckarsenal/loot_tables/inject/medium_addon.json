@@ -1,0 +1,19 @@
+{
+    "pools": [
+        {
+			"name": "generals",
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minestuckarsenal:host_plush",
+                    "weight": 75
+                },
+				{
+					"type": "empty",
+					"weight": 25
+				}
+            ]
+        }
+    ]
+}
