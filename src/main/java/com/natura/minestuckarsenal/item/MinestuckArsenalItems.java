@@ -1,13 +1,13 @@
 package com.natura.minestuckarsenal.item;
 
-import static com.mraof.minestuck.block.MinestuckBlocks.genericObject;
+import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.uniqueObject;
 
 import com.mraof.minestuck.item.MinestuckItems;
 import com.mraof.minestuck.item.weapon.ItemCandyWeapon;
 import com.mraof.minestuck.item.weapon.ItemDualWeapon;
 import com.mraof.minestuck.item.weapon.ItemPogoWeapon;
+import com.mraof.minestuck.item.weapon.ItemSord;
 import com.mraof.minestuck.item.weapon.ItemWeapon;
-import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.*;
 
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -39,7 +39,7 @@ public class MinestuckArsenalItems {
 	public static Item derseReaper = new ItemWeapon(200, 4, -2.4D, 12, "derseReaper").setRegistryName("derse_reaper");
 	public static Item prospitReaper = new ItemWeapon(200, 4, -2.4D, 12, "prospitReaper").setRegistryName("prospit_reaper");
 	public static Item hemeoreaper = new ItemWeapon(550, 6, -2.4D, 15, "hemeoreaper").setRegistryName("hemeoreaper");
-	
+	public static Item owTheEdge = new ItemSord(25, 2, -2.4D, 2, "owTheEdge").setRegistryName("ow_the_edge");
 	
 	//hammerKind
 	public static Item wrinklefucker = new ItemPogoWeapon(500, 9.0D, -2.8D, 12, "wrinklefucker", 0.4).setRegistryName("wrinklefucker");
@@ -121,7 +121,8 @@ public class MinestuckArsenalItems {
 	public static Item fridgeMagnet = new Item().setRegistryName("fridge_magnet").setUnlocalizedName("fridgeMagnet").setCreativeTab(MinestuckItems.tabMinestuck);
 	public static Item hostPlush = new Item().setRegistryName("host_plush").setUnlocalizedName("hostPlush").setCreativeTab(MinestuckItems.tabMinestuck);
 	public static Item magicEightBall = new Item().setRegistryName("magic_eight_ball").setUnlocalizedName("magicEightBall").setCreativeTab(MinestuckItems.tabMinestuck);
-
+	public static Item barbasolBomb = new ItemBarbasolBomb("barbasolBomb").setRegistryName("barbasol_bomb");
+	
 	//Clothing
 	public static Item trollHeadband = new ItemArmor(armorTrollHeadband, 0, EntityEquipmentSlot.HEAD).setRegistryName("troll_horn_headband").setUnlocalizedName("trollHornHeadband").setCreativeTab(MinestuckItems.tabMinestuck);
 	public static Item dirkShades = new ItemArmor(armorDirkGlasses, 0, EntityEquipmentSlot.HEAD).setRegistryName("dirk_glasses").setUnlocalizedName("dirkGlasses").setCreativeTab(MinestuckItems.tabMinestuck);
@@ -148,6 +149,7 @@ public class MinestuckArsenalItems {
 		registry.register(derseReaper);
 		registry.register(prospitReaper);
 		registry.register(hemeoreaper);
+		registry.register(owTheEdge);
 		
 		//hammerKind
 		registry.register(wrinklefucker);
@@ -207,6 +209,7 @@ public class MinestuckArsenalItems {
 		registry.register(fridgeMagnet);
 		registry.register(hostPlush);
 		registry.register(magicEightBall);
+		registry.register(barbasolBomb);
 		
 		//armor
 		registry.register(trollHeadband);

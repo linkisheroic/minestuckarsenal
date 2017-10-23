@@ -1,6 +1,8 @@
 package com.natura.minestuckarsenal;
 
+import com.mraof.minestuck.util.KindAbstratusList;
 import com.natura.minestuckarsenal.block.MinestuckArsenalBlocks;
+import com.natura.minestuckarsenal.entity.MinestuckArsenalEntities;
 import com.natura.minestuckarsenal.item.MinestuckArsenalItems;
 import com.natura.minestuckarsenal.proxy.CommonProxy;
 
@@ -19,7 +21,7 @@ public class MinestuckArsenal {
 
     public static final String MODID = "minestuckarsenal";
     public static final String MODNAME = "Minestuck Arsenal";
-    public static final String VERSION = "0.1.0";
+    public static final String VERSION = "0.2.0";
 
     @SidedProxy(clientSide = "com.natura.minestuckarsenal.proxy.ClientProxy", serverSide = "com.natura.minestuckarsenal.proxy.ServerProxy")
     public static CommonProxy proxy;
@@ -41,10 +43,12 @@ public class MinestuckArsenal {
 
     @EventHandler
     public void init(FMLInitializationEvent e) {
+    	MinestuckArsenalEntities.registerEntities();
     	AlchemyRecipes.registerVanillaRecipes();
     	AlchemyRecipes.registerMinestuckRecipes();
     	AlchemyRecipes.registerModRecipes();
     	MinecraftForge.EVENT_BUS.register(new LootTableEventHandler());
+		KindAbstratusList.registerTypes();
         proxy.init();
     }
 

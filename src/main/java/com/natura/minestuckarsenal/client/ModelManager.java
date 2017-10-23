@@ -48,6 +48,7 @@ public class ModelManager {
 		register(derseReaper);
 		register(prospitReaper);
 		register(hemeoreaper);
+		register(owTheEdge);
 		
 		register(wrinklefucker);
 		
@@ -99,6 +100,7 @@ public class ModelManager {
 		register(fridgeMagnet);
 		register(hostPlush);
 		register(magicEightBall);
+		register(barbasolBomb);
 		
 		register(trollHeadband);
 		register(dirkShades);

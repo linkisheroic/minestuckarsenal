@@ -32,6 +32,7 @@ public class AlchemyRecipes {
 		GristRegistry.addGristConversion(new ItemStack(wrinklefucker), false, new GristSet(new GristType[] {GristType.Build, GristType.Shale, GristType.Tar}, new int[] {55, 44, 66}));
 	
 		GristRegistry.addGristConversion(new ItemStack(hemeoreaper), false, new GristSet(new GristType[] {GristType.Build, GristType.Rust, GristType.Garnet, GristType.Iodine}, new int[] {250, 85, 75, 24}));
+		GristRegistry.addGristConversion(new ItemStack(owTheEdge), false, new GristSet(GristType.Artifact, -25));
 		
 		GristRegistry.addGristConversion(new ItemStack(joustingLance), false, new GristSet(GristType.Build, 15));
 		GristRegistry.addGristConversion(new ItemStack(fiduspawnLance), false, new GristSet(new GristType[] {GristType.Build, GristType.Tar, GristType.Shale}, new int[] {30, 22, 16}));
@@ -39,16 +40,21 @@ public class AlchemyRecipes {
 		GristRegistry.addGristConversion(new ItemStack(leatherWhip), false, new GristSet(GristType.Build, 12));
 		
 		GristRegistry.addGristConversion(new ItemStack(hostPlush), false, new GristSet(GristType.Build, 5));
+		GristRegistry.addGristConversion(new ItemStack(barbasol), false, new GristSet(GristType.Build, 1));
+		GristRegistry.addGristConversion(new ItemStack(barbasolBomb), false, new GristSet(new GristType[] {GristType.Build, GristType.Shale}, new int[] {1, 1}));
+		GristRegistry.addGristConversion(new ItemStack(trollHeadband), false, new GristSet(new GristType[] {GristType.Build, GristType.Shale, GristType.Ruby, GristType.Marble}, new int[] {25, 12, 19, 20}));
 		
 		GristRegistry.addGristConversion(new ItemStack(uniqueObject), false, new GristSet(new GristType[] {GristType.Amber, GristType.Amethyst, GristType.Artifact, GristType.Build, GristType.Caulk, GristType.Chalk, GristType.Cobalt, GristType.Diamond, GristType.Garnet, GristType.Gold, GristType.Iodine, GristType.Marble, GristType.Mercury, GristType.Quartz, GristType.Ruby, GristType.Rust, GristType.Shale, GristType.Sulfur, GristType.Tar, GristType.Uranium, GristType.Zillium}, new int[] {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}));
 		
-		CombinationRegistry.addCombination(new ItemStack(MinestuckItems.katana), new ItemStack(Items.PAPER), CombinationRegistry.MODE_AND, new ItemStack(paperSword));
-		CombinationRegistry.addCombination(new ItemStack(brokenRoyalDeringer), new ItemStack(magicCueball), CombinationRegistry.MODE_AND, new ItemStack(MinestuckItems.caledfwlch));
+		CombinationRegistry.addCombination(new ItemStack(MinestuckItems.katana), new ItemStack(Items.PAPER), CombinationRegistry.MODE_OR, new ItemStack(paperSword));
+		CombinationRegistry.addCombination(new ItemStack(brokenRoyalDeringer), new ItemStack(magicCueball), CombinationRegistry.MODE_OR, new ItemStack(MinestuckItems.caledfwlch));
+		CombinationRegistry.addCombination(new ItemStack(hemeoreaper), new ItemStack(MinestuckItems.sbahjPoster), CombinationRegistry.MODE_OR, new ItemStack(owTheEdge));
 		
 		CombinationRegistry.addCombination(new ItemStack(Items.LEATHER), new ItemStack(Items.STRING), CombinationRegistry.MODE_AND, new ItemStack(MinestuckArsenalItems.leatherWhip));
-		CombinationRegistry.addCombination(new ItemStack(MinestuckItems.homesSmellYaLater), new ItemStack(MinestuckItems.minestuckBucket, 2), CombinationRegistry.MODE_AND, new ItemStack(hemeoreaper));
+		CombinationRegistry.addCombination(new ItemStack(MinestuckItems.homesSmellYaLater), new ItemStack(MinestuckItems.minestuckBucket, 1, 1), CombinationRegistry.MODE_OR, new ItemStack(hemeoreaper));
 		CombinationRegistry.addCombination(new ItemStack(hostPlush), new ItemStack(joustingLance), CombinationRegistry.MODE_AND, new ItemStack(fiduspawnLance));
-	
+		CombinationRegistry.addCombination(new ItemStack(MinestuckItems.candy, 1, 4), new ItemStack(barbasol), CombinationRegistry.MODE_AND, new ItemStack(barbasolBomb));
+		CombinationRegistry.addCombination(new ItemStack(MinestuckItems.threshDvd), new ItemStack(MinestuckItems.candy, 1, 0), CombinationRegistry.MODE_AND, new ItemStack(trollHeadband));
 	}
 	
 	public static void registerVanillaRecipes() 
