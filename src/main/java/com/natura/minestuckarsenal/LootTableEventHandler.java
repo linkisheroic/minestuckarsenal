@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class LootTableEventHandler {
 
 public LootTableEventHandler() {
-		
+	LootTableList.register(new ResourceLocation("minestuckarsenal", "inject/medium_addon"));
 	}
 	
 	@SubscribeEvent
@@ -24,7 +24,7 @@ public LootTableEventHandler() {
 		if (event.getName().equals(AlchemyRecipeHandler.BASIC_MEDIUM_CHEST)) {
 			LootEntry entry = new LootEntryTable(new ResourceLocation("minestuckarsenal", "inject/medium_addon"), 1, 1, new LootCondition[0], "medium_addon"); // weight doesn't matter since it's the only entry in the pool. Other params set as you wish.
 
-			LootPool pool = new LootPool(new LootEntry[] {entry}, new LootCondition[0], new RandomValueRange(5), new RandomValueRange(0, 3), "medium_addon"); // Other params set as you wish.
+			LootPool pool = new LootPool(new LootEntry[] {entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 2), "medium_addon"); // Other params set as you wish.
 
 			event.getTable().addPool(pool);
 

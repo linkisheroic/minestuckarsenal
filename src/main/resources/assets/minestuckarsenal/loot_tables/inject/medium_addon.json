@@ -2,16 +2,76 @@
     "pools": [
         {
 			"name": "generals",
-            "rolls": 3,
+            "rolls": 1,
             "entries": [
                 {
                     "type": "item",
                     "name": "minestuckarsenal:host_plush",
-                    "weight": 75
+                    "weight": 5
                 },
 				{
+					"type": "item",
+					"name": "minestuckarsenal:jousting_lance",
+					"weight": 5
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:apple_juice",
+					"weight": 20
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:magic_eight_ball",
+					"weight":5
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:magic_cueball",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:leather_whip",
+					"weight": 5
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:wooden_bat",
+					"weight": 5
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:wooden_trident",
+					"weight": 3
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:silver_trident",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:knitting_needles",
+					"weight": 5
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:broken_katana",
+					"weight": 4
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:paper_sword",
+					"weight": 6
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:unique_object",
+					"weight": 2
+				},
+				{
 					"type": "empty",
-					"weight": 25
+					"weight": 50
 				}
             ]
         }

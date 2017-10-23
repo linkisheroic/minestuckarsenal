@@ -1,5 +1,6 @@
 package com.natura.minestuckarsenal.proxy;
 
+import com.natura.minestuckarsenal.client.ClientEventHandler;
 import com.natura.minestuckarsenal.client.ModelManager;
 
 import net.minecraftforge.common.MinecraftForge;
@@ -12,6 +13,7 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit() {
 		MinecraftForge.EVENT_BUS.register(ModelManager.class);
+		MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
 	}
 	
 	@Override

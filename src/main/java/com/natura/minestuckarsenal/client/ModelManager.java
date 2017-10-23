@@ -9,7 +9,9 @@ import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.brokenScarl
 import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.lipstickChainsaw;
 import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.nepetaClaws;
 import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.*;
+import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.*;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -30,6 +32,7 @@ public class ModelManager {
 	public static void handleModelRegistry(ModelRegistryEvent event)
 	{
 		itemModels();
+		blockModels();
 	}
 	
 	private static void itemModels()
@@ -70,6 +73,9 @@ public class ModelManager {
 		
 		register(leatherWhip);
 		
+		register(blackStaff);
+		register(goldStaff);
+		
 		ModelLoader.registerItemVariants(nepetaClaws, new ResourceLocation("minestuckarsenal:nepeta_claws_sheathed"), new ResourceLocation("minestuckarsenal:nepeta_claws_drawn"));
 		ModelLoader.setCustomMeshDefinition(nepetaClaws, new DualWeaponDefinition(nepetaClaws));
 		
@@ -85,6 +91,7 @@ public class ModelManager {
 		register(licoriceGummyBear);
 		register(cottonCandy);
 		register(cuttlefish);
+		register(soporSlime);
 		
 		register(barbasol);
 		register(clothesIron);
@@ -93,11 +100,24 @@ public class ModelManager {
 		register(hostPlush);
 		register(magicEightBall);
 		
+		register(trollHeadband);
+		register(dirkShades);
+		
+	}
+	
+	private static void blockModels()
+	{
+		register(uniqueObject);
 	}
 	
 	private static void register(Item item)
 	{
 		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Item.REGISTRY.getNameForObject(item), "inventory"));
+	}
+	
+	private static void register(Block block)
+	{
+		register(Item.getItemFromBlock(block));
 	}
 	
 	private static class DualWeaponDefinition implements ItemMeshDefinition

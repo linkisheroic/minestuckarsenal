@@ -1,5 +1,6 @@
 package com.natura.minestuckarsenal;
 
+import com.natura.minestuckarsenal.block.MinestuckArsenalBlocks;
 import com.natura.minestuckarsenal.item.MinestuckArsenalItems;
 import com.natura.minestuckarsenal.proxy.CommonProxy;
 
@@ -13,7 +14,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = MinestuckArsenal.MODID, name = MinestuckArsenal.MODNAME, version = MinestuckArsenal.VERSION, useMetadata = true)
+@Mod(modid = MinestuckArsenal.MODID, name = MinestuckArsenal.MODNAME, version = MinestuckArsenal.VERSION, useMetadata = true, acceptedMinecraftVersions = "[1.12,1.12.2]")
 public class MinestuckArsenal {
 
     public static final String MODID = "minestuckarsenal";
@@ -30,8 +31,10 @@ public class MinestuckArsenal {
     public void preInit(FMLPreInitializationEvent event) {
     	
     	proxy.preInit();
+      	MinecraftForge.EVENT_BUS.register(MinestuckArsenalBlocks.class);
     	MinecraftForge.EVENT_BUS.register(MinestuckArsenalItems.class);
-    	LootTableList.register(new ResourceLocation("minestuckarsenal:inject/medium_addon"));
+  
+    	
     	
     }
     
@@ -41,7 +44,7 @@ public class MinestuckArsenal {
     	AlchemyRecipes.registerVanillaRecipes();
     	AlchemyRecipes.registerMinestuckRecipes();
     	AlchemyRecipes.registerModRecipes();
-    	MinecraftForge.EVENT_BUS.register(LootTableEventHandler.class);
+    	MinecraftForge.EVENT_BUS.register(new LootTableEventHandler());
         proxy.init();
     }
 

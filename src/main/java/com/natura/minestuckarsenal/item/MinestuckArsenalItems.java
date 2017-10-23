@@ -1,13 +1,21 @@
 package com.natura.minestuckarsenal.item;
 
+import static com.mraof.minestuck.block.MinestuckBlocks.genericObject;
+
 import com.mraof.minestuck.item.MinestuckItems;
 import com.mraof.minestuck.item.weapon.ItemCandyWeapon;
 import com.mraof.minestuck.item.weapon.ItemDualWeapon;
 import com.mraof.minestuck.item.weapon.ItemPogoWeapon;
 import com.mraof.minestuck.item.weapon.ItemWeapon;
+import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.*;
 
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemFood;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -15,9 +23,10 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class MinestuckArsenalItems {
 
 	//Instantiate items.
-	
+	public static ItemArmor.ArmorMaterial armorTrollHeadband = EnumHelper.addArmorMaterial("TROLL_HEADBAND", "minestuckarsenal:troll_headband", 50, new int[]{2, 2, 2, 2}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+	public static ItemArmor.ArmorMaterial armorDirkGlasses = EnumHelper.addArmorMaterial("DIRK_SHADES", "minestuckarsenal:dirk_glasses", 250, new int[] {4, 5,  4,  5}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 	//bladeKind
-	public static Item paperSword = new ItemWeapon(65, 4, -2.4D, 15, "paperSword").setRegistryName("paper_sword");
+	public static Item paperSword = new ItemWeapon(65, 2, -2.4D, 15, "paperSword").setRegistryName("paper_sword");
 	
 	//1/2bladeKind
 	public static Item brokenNinjaSword = new ItemWeapon(100, 3, -2.4D, 15, "brokenNinjaSword").setRegistryName("broken_katana");
@@ -60,7 +69,7 @@ public class MinestuckArsenalItems {
 	public static Item imperialFork = new ItemWeapon(1200, 10, -2.6D, 12, "emperialFork").setRegistryName("emperial_fork");
 	
 	//makeupKind
-	public static Item lipstickChainsaw = new ItemDualWeapon(250, 1.0D, 5.0D, -1.5D,-2.5D, 10, "lipstickChainsaw").setRegistryName("lipstick_chainsaw");
+	public static Item lipstickChainsaw = new ItemDualWeapon(250, 5.0D, 1.0D, -1.5D,-2.5D, 10, "lipstickChainsaw").setRegistryName("lipstick_chainsaw");
 	
 	
 	//clubKind
@@ -76,7 +85,8 @@ public class MinestuckArsenalItems {
 	public static Item rocketPopLance = new ItemCandyWeapon(500, 6.0D, -2.8D, 10, "rocketPopLance").setRegistryName("rocketpop_lance");
 	
 	//caneKind
-	
+	public static Item blackStaff = new ItemWeapon(250, 4.0D, -2.6D, 4, "blackStaff").setRegistryName("black_staff");
+	public static Item goldStaff = new ItemWeapon(450, 6.0D, -2.6D, 10, "goldStaff").setRegistryName("gold_staff");
 	
 	//batKind
 	public static Item woodenBat = new ItemWeapon(300, 4.0D, -2.2D, 4, "woodenBat").setRegistryName("wooden_bat");
@@ -103,7 +113,7 @@ public class MinestuckArsenalItems {
 	public static Item licoriceFish = new ItemFood(2, 0.4F, false).setRegistryName("licorice_fish").setUnlocalizedName("licoriceFish").setCreativeTab(MinestuckItems.tabMinestuck);
 	public static Item cottonCandy = new ItemFood(4, 0.5F, false).setRegistryName("cotton_candy").setUnlocalizedName("cottonCandy").setCreativeTab(MinestuckItems.tabMinestuck);
 	public static Item cuttlefish = new ItemFood(5, 0.5F, false).setRegistryName("cuttlefish").setUnlocalizedName("cuttlefish").setCreativeTab(MinestuckItems.tabMinestuck);
-
+	public static Item soporSlime = new ItemFood(2, 0.4F, false).setRegistryName("sopor_slime").setUnlocalizedName("soporSlime").setCreativeTab(MinestuckItems.tabMinestuck);
 	//Other
 	public static Item clothesIron = new Item().setRegistryName("clothes_iron").setUnlocalizedName("clothesIron").setCreativeTab(MinestuckItems.tabMinestuck);
 	public static Item barbasol = new Item().setRegistryName("barbasol").setUnlocalizedName("barbasol").setCreativeTab(MinestuckItems.tabMinestuck);
@@ -112,11 +122,17 @@ public class MinestuckArsenalItems {
 	public static Item hostPlush = new Item().setRegistryName("host_plush").setUnlocalizedName("hostPlush").setCreativeTab(MinestuckItems.tabMinestuck);
 	public static Item magicEightBall = new Item().setRegistryName("magic_eight_ball").setUnlocalizedName("magicEightBall").setCreativeTab(MinestuckItems.tabMinestuck);
 
+	//Clothing
+	public static Item trollHeadband = new ItemArmor(armorTrollHeadband, 0, EntityEquipmentSlot.HEAD).setRegistryName("troll_horn_headband").setUnlocalizedName("trollHornHeadband").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item dirkShades = new ItemArmor(armorDirkGlasses, 0, EntityEquipmentSlot.HEAD).setRegistryName("dirk_glasses").setUnlocalizedName("dirkGlasses").setCreativeTab(MinestuckItems.tabMinestuck);
 	
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
 		IForgeRegistry<Item> registry = event.getRegistry();
+		
+		//ItemBlocks
+		registerItemBlock(registry, new ItemBlock(uniqueObject));
 		
 		//bladeKind
 		registry.register(paperSword);
@@ -171,6 +187,10 @@ public class MinestuckArsenalItems {
 		//whipKind
 		registry.register(leatherWhip);
 		
+		//caneKind
+		registry.register(blackStaff);
+		registry.register(goldStaff);
+		
 		//food
 		registry.register(appleJuice);
 		registry.register(scottyDog);
@@ -178,6 +198,7 @@ public class MinestuckArsenalItems {
 		registry.register(licoriceGummyBear);
 		registry.register(cottonCandy);
 		registry.register(cuttlefish);
+		registry.register(soporSlime);
 		
 		//other
 		registry.register(clothesIron);
@@ -186,6 +207,16 @@ public class MinestuckArsenalItems {
 		registry.register(fridgeMagnet);
 		registry.register(hostPlush);
 		registry.register(magicEightBall);
+		
+		//armor
+		registry.register(trollHeadband);
+		registry.register(dirkShades);
+	}
+	
+	private static Item registerItemBlock(IForgeRegistry<Item> registry, ItemBlock item)
+	{
+		registry.register(item.setRegistryName(item.getBlock().getRegistryName()));
+		return item;
 	}
 	
 }
