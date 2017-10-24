@@ -11,9 +11,6 @@ public class ArsenalKindAbstratusList {
 	
 	public static void registerTypes()
 	{
-		if(KindAbstratusList.getTypeList() != null)
-			return;
-				KindAbstratusList.registerType(new KindAbstratusType("hammer"));
 				KindAbstratusList.registerType(new KindAbstratusType("bomb"));
 				KindAbstratusList.registerType(new KindAbstratusType("1/2blade"));
 				KindAbstratusList.registerType(new KindAbstratusType("needle"));
@@ -26,6 +23,6 @@ public class ArsenalKindAbstratusList {
 				KindAbstratusList.registerType(new KindAbstratusType("2x3dent"));
 				KindAbstratusList.registerType(new KindAbstratusType("scissor"));
 				KindAbstratusList.registerType(new KindAbstratusType("lamp"));
-
+				KindAbstratusList.registerType(new KindAbstratusType("fncysnta"));
 	}
 }

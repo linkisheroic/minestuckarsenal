@@ -106,6 +106,9 @@ public class MinestuckArsenalItems {
 	
 	//thrwstrKind
 	
+	//bombKind
+	public static Item barbasolBomb = new ItemBarbasolBomb("barbasolBomb").setRegistryName("barbasol_bomb");
+	
 	//Food
 	public static Item appleJuice = new ItemArsenalBeverage("appleJuice").setRegistryName("apple_juice");
 	public static Item scottyDog = new ItemFood(2, 0.4F, false).setRegistryName("scotty_dog").setUnlocalizedName("scottyDog").setCreativeTab(MinestuckItems.tabMinestuck);
@@ -121,7 +124,8 @@ public class MinestuckArsenalItems {
 	public static Item fridgeMagnet = new Item().setRegistryName("fridge_magnet").setUnlocalizedName("fridgeMagnet").setCreativeTab(MinestuckItems.tabMinestuck);
 	public static Item hostPlush = new Item().setRegistryName("host_plush").setUnlocalizedName("hostPlush").setCreativeTab(MinestuckItems.tabMinestuck);
 	public static Item magicEightBall = new Item().setRegistryName("magic_eight_ball").setUnlocalizedName("magicEightBall").setCreativeTab(MinestuckItems.tabMinestuck);
-	public static Item barbasolBomb = new ItemBarbasolBomb("barbasolBomb").setRegistryName("barbasol_bomb");
+	public static Item wizardStatue = new Item().setRegistryName("wizard_statue").setUnlocalizedName("wizardStatue").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item grimoire = new Item().setRegistryName("grimoire").setUnlocalizedName("grimoire").setCreativeTab(MinestuckItems.tabMinestuck);
 	
 	//Clothing
 	public static Item trollHeadband = new ItemArmor(armorTrollHeadband, 0, EntityEquipmentSlot.HEAD).setRegistryName("troll_horn_headband").setUnlocalizedName("trollHornHeadband").setCreativeTab(MinestuckItems.tabMinestuck);
@@ -193,6 +197,9 @@ public class MinestuckArsenalItems {
 		registry.register(blackStaff);
 		registry.register(goldStaff);
 		
+		//bombKind
+		registry.register(barbasolBomb);
+		
 		//food
 		registry.register(appleJuice);
 		registry.register(scottyDog);
@@ -209,7 +216,8 @@ public class MinestuckArsenalItems {
 		registry.register(fridgeMagnet);
 		registry.register(hostPlush);
 		registry.register(magicEightBall);
-		registry.register(barbasolBomb);
+		registry.register(wizardStatue);
+		registry.register(grimoire);
 		
 		//armor
 		registry.register(trollHeadband);

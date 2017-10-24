@@ -100,6 +100,8 @@ public class ModelManager {
 		register(fridgeMagnet);
 		register(hostPlush);
 		register(magicEightBall);
+		register(grimoire);
+		register(wizardStatue);
 		register(barbasolBomb);
 		
 		register(trollHeadband);

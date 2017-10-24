@@ -1,13 +1,10 @@
 package com.natura.minestuckarsenal;
 
-import com.mraof.minestuck.util.KindAbstratusList;
 import com.natura.minestuckarsenal.block.MinestuckArsenalBlocks;
 import com.natura.minestuckarsenal.entity.MinestuckArsenalEntities;
 import com.natura.minestuckarsenal.item.MinestuckArsenalItems;
 import com.natura.minestuckarsenal.proxy.CommonProxy;
 
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -43,12 +40,14 @@ public class MinestuckArsenal {
 
     @EventHandler
     public void init(FMLInitializationEvent e) {
+		ArsenalKindAbstratusList.registerTypes();
     	MinestuckArsenalEntities.registerEntities();
     	AlchemyRecipes.registerVanillaRecipes();
     	AlchemyRecipes.registerMinestuckRecipes();
     	AlchemyRecipes.registerModRecipes();
     	MinecraftForge.EVENT_BUS.register(new LootTableEventHandler());
-		KindAbstratusList.registerTypes();
+    	MinecraftForge.EVENT_BUS.register(new GristDropEventHandler());
+		ArsenalKindAbstratusList.registerTypes();
         proxy.init();
     }
 
