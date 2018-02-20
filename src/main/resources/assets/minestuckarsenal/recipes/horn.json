@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W",
+    "N"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:iron_ingot"
+    },
+	"N": {
+		"item": "minecraft:noteblock"
+	}
+  },
+  "result": {
+    "item": "minestuckarsenal:horn",
+    "count": 1
+  }
+}

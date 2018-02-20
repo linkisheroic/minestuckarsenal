@@ -1,0 +1,15 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "minestuckarsenal:fish",
+                    "weight": 85,
+                    "quality": -1
+                }
+            ]
+        }
+    ]
+}

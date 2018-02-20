@@ -1,0 +1,17 @@
+{
+  "pickup_grist": {
+    "category": "item",
+    "subtitle": "minestuckarsenal.subtitle.pickupGrist",
+    "sounds": [ "minestuckarsenal:pickup_grist" ]
+  },
+  "pickup_vitality_gel": {
+    "category": "item",
+    "subtitle": "minestuckarsenal.subtitle.pickupVitalityGel",
+	"sounds": [ "minestuckarsenal:pickup_vitality_gel" ]
+  },
+  "horn_honk": {
+    "category": "item",
+    "subtitle": "minestuckarsenal.subtitle.hornHonk",
+	"sounds": [ "minestuckarsenal:horn_honk" ]
+  }
+}

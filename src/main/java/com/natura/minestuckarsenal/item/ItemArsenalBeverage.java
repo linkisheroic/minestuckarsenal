@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 public class ItemArsenalBeverage extends ItemFood {
 
 	public ItemArsenalBeverage(String unlocalizedName) {
-		super(0, 0, false);
+		super(1, 0, false);
 		setUnlocalizedName(unlocalizedName);
 		this.setCreativeTab(MinestuckItems.tabMinestuck);
 		setAlwaysEdible();

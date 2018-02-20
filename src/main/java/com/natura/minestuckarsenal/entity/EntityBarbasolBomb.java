@@ -40,7 +40,7 @@ public class EntityBarbasolBomb extends EntityThrowable {
 	    	if(!this.world.isRemote) {
 	        Entity entity = result.entityHit;
 	       
-	        world.createExplosion(throwerIn, result.hitVec.x, result.hitVec.y, result.hitVec.z, 1F, true);
+	        world.createExplosion(throwerIn, result.hitVec.x, result.hitVec.y, result.hitVec.z, 3F, true);
 	    	}
 
 	        if (!this.world.isRemote)

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "QQQ",
+    "QIQ",
+    "QQQ"
+  ],
+  "key": {
+    "Q": {
+      "item": "minecraft:quartz"
+    },
+	"I": {
+		"item": "minecraft:dye",
+		"data": 0
+	}
+  },
+  "result": {
+    "item": "minestuck:dice",
+    "count": 1
+  }
+}

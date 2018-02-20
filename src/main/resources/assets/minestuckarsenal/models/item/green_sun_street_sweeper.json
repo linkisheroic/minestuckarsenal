@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minestuckarsenal:items/green_sun_street_sweeper"
+    }
+}

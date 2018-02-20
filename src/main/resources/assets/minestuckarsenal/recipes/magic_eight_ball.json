@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IGI",
+    "QDQ",
+    "IWI"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:dye",
+	  "data": 0
+    },
+	"G": {
+		"item": "minecraft:glass_pane"
+	},
+	"D": {
+		"item": "minestuck:dice"
+	},
+	"Q": {
+		"item": "minecraft:quartz"
+	},
+	"W": {
+		"item": "minecraft:water_bucket"
+	}
+  },
+  "result": {
+    "item": "minestuckarsenal:magic_eight_ball",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " WW",
+    " WW",
+	"S  "
+  ],
+  "key": {
+    "W": {
+		"item": "minecraft:planks",
+		"data": 0
+    },
+	"S": {
+		"item": "minecraft:stick"
+	}
+  },
+  "result": {
+    "item": "minestuckarsenal:wooden_bat",
+    "count": 1
+  }
+}

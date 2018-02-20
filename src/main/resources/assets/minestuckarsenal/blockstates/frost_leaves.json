@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "minestuckarsenal:frost_leaves" },
+		"inventory": { "model": "minestuckarsenal:frost_leaves" }
+    }
+}

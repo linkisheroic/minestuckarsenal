@@ -14,6 +14,7 @@ public class MinestuckArsenalEntities {
 	public static void registerEntities()
 	{
 		registerEntity(EntityBarbasolBomb.class, "barbasol_bomb");
+		registerEntity(EntitySuitarang.class, "suitarang");
 	}
 	
 	public static void registerEntity(Class<? extends Entity> entityClass, String name)

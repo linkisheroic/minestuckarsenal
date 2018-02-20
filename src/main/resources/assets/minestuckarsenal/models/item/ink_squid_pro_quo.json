@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minestuckarsenal:items/ink_squid_pro_quo"
+    }
+}

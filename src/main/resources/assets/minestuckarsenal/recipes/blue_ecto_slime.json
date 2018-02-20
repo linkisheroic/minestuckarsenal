@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minestuck:glowing_mushroom"
+		}
+	],
+	"result": {
+		"item": "minestuckarsenal:blue_ecto_slime",
+		"count": 2
+	}
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "G",
+    "I"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:dye",
+	  "data": 2
+    },
+	"I": {
+		"item": "minecraft:iron_ingot"
+	}
+  },
+  "result": {
+    "item": "minestuckarsenal:lipstick_chainsaw",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "axis=y":    { "model": "minestuckarsenal:frost_log" },
+        "axis=z":     { "model": "minestuckarsenal:frost_log", "x": 90 },
+        "axis=x":     { "model": "minestuckarsenal:frost_log", "x": 90, "y": 90 },
+        "axis=none":   { "model": "minestuckarsenal:frost_bark" },
+		"inventory": { "model": "minestuckarsenal:frost_log" }
+    }
+}

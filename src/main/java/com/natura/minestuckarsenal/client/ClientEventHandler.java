@@ -1,10 +1,11 @@
 package com.natura.minestuckarsenal.client;
 
-import com.mraof.minestuck.Minestuck;
 import com.natura.minestuckarsenal.MinestuckArsenal;
 
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.translation.I18n;
+import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;

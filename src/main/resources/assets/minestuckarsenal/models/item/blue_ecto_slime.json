@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "minestuckarsenal:items/blue_ecto_slime"
+    }
+}
