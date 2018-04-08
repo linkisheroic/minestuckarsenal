@@ -20,6 +20,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemFood;
 import net.minecraft.potion.PotionEffect;
+import net.minecraftforge.client.model.ItemLayerModel.Loader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -28,9 +29,9 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class MinestuckArsenalItems {
 	
 	//Items to override from Minestuck
-	public static Item caledfwlch = new ItemWeapon(1200, 25, -2.4D, 30, "caledfwlch").setRegistryName("caledfwlch");
-	public static Item mwrthwl = new ItemWeapon(1200, 25, -2.4D, 30, "mwrthwl").setTool("pickaxe", 4, 5.0F).setRegistryName("mwrthwl");
-	public static Item fearNoAnvil = new ItemPotionWeapon(20000, 16, -2.8D, 50, "fearNoAnvil", new PotionEffect(MobEffects.SLOWNESS, 100, 100)).setTool("pickaxe", 4, 6.0F).setRegistryName("fear_no_anvil");
+	public static Item caledfwlch = new ItemWeapon(1200, 25, -2.4D, 30, "caledfwlch").setRegistryName("minestuck", "caledfwlch");
+	public static Item mwrthwl = new ItemWeapon(1200, 25, -2.4D, 30, "mwrthwl").setTool("pickaxe", 4, 5.0F).setRegistryName("minestuck", "mwrthwl");
+	public static Item fearNoAnvil = new ItemPotionWeapon(20000, 16, -2.8D, 50, "fearNoAnvil", new PotionEffect(MobEffects.SLOWNESS, 100, 100)).setTool("pickaxe", 4, 6.0F).setRegistryName("minestuck", "fear_no_anvil");
 	
 	//Instantiate items.
 	public static ItemArmor.ArmorMaterial armorTrollHeadband = EnumHelper.addArmorMaterial("TROLL_HEADBAND", "minestuckarsenal:troll_headband", 50, new int[]{2, 2, 2, 2}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
@@ -132,7 +133,7 @@ public class MinestuckArsenalItems {
 	public static Item blackStaff = new ItemDualWeapon(250, 4.0D, 0.0D, -2.6D, -1.0D, 4, "blackStaff").setRegistryName("black_staff");
 	public static Item goldStaff = new ItemDualWeapon(450, 9.0D, 0.0D, -2.6D, 1.0D, 10, "goldStaff").setRegistryName("gold_staff");
 	public static Item crowbar = new ItemWeapon(500, 8.0D, -2.6D, 20, "crowbar").setRegistryName("crowbar");
-	public static Item pogoCane = new ItemPogoWeapon(400, 7.0D, -2.0D, 8, "pogoCane", 0.7).setRegistryName("pogo_cane");
+	public static Item pogoCane = new ItemPogoWeapon(400, 7.0D, -2.0D, 8, "pogoCane", 0.7).setRegistryName("minestuck", "pogo_cane");
 	public static Item regicane = new ItemWeapon(812, 6, -2.4D, 10, "regicane").setRegistryName("regicane");
 	public static Item bladedCane = new ItemWeapon(350, 6.0D, -2.0D, 10, "bladedCane").setRegistryName("bladed_cane");
 	public static Item blazingGlory = new ItemWeapon(950, 7.0D, -2.0D, 14, "blazingGlory").setRegistryName("blazing_glory");
@@ -166,10 +167,16 @@ public class MinestuckArsenalItems {
 	//bombKind
 	public static Item barbasolBomb = new ItemBarbasolBomb("barbasolBomb").setRegistryName("barbasol_bomb");
 	
+	//keykind
+	public static Item houseKey = new ItemWeapon(250, 2.5D, -2.4D, 5, "houseKey").setRegistryName("house_key").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item keyblade = new ItemWeapon(450, 4.5D, -2.4D, 11, "keyblade").setRegistryName("keyblade").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item trueBlue = new ItemWeapon(550, 5.5D, -2.4D, 13, "trueBlue").setRegistryName("true_blue").setCreativeTab(MinestuckItems.tabMinestuck);
+	public static Item yaldabaothsKeyton = new ItemWeapon(2400, 25.0D, -2.4D, 30, "yaldabaothsKeyton").setRegistryName("yaldabaoths_keyton").setCreativeTab(MinestuckItems.tabMinestuck);
+	
 	//Misc Weapons
 	public static Item jujuSucker = new ItemWeapon(413, 12.0D, -2.4D, 30, "jujuSucker").setRegistryName("juju_sucker");
-	
 	public static Item mineNGrist = new ItemMineNGrist().setUnlocalizedName("mineAndGrist").setRegistryName("mine_and_grist").setCreativeTab(MinestuckItems.tabMinestuck);
+	
 	
 	//Food
 	public static Item appleJuice = new ItemArsenalBeverage("appleJuice").setRegistryName("apple_juice");
@@ -210,7 +217,7 @@ public class MinestuckArsenalItems {
 	
 	public static Item horn = new ItemHorn();
 	
-	public static Item boondollar = new ItemBoondollar("boondollar", 1).setRegistryName("boondollar");
+	//public static Item boondollar = new ItemBoondollar("boondollar", 1).setRegistryName("boondollar");
 	public static Item boonbuck = new ItemBoondollar("boonbuck", 1000000).setRegistryName("boonbuck");
 	public static Item booncase = new ItemBoondollar("booncase", 1000000000).setRegistryName("booncase");
 	
@@ -279,10 +286,12 @@ public class MinestuckArsenalItems {
 		registerItemBlock(registry, new ItemBlock(sendificator));
 		registerItemBlock(registry, new ItemBlock(kringlefucker));
 		
-		//Override Minestuck Items
-		registry.register(caledfwlch);
-		registry.register(fearNoAnvil);
-		registry.register(mwrthwl);
+		
+		
+		registry.register(houseKey);
+		registry.register(keyblade);
+		registry.register(trueBlue);
+		registry.register(yaldabaothsKeyton);
 		
 		//bladeKind
 		registry.register(paperSword);
@@ -431,7 +440,7 @@ public class MinestuckArsenalItems {
 		
 		registry.register(scalemate);
 		
-		registry.register(boondollar);
+		//registry.register(boondollar);
 		registry.register(boonbuck);
 		registry.register(booncase);
 		
@@ -475,6 +484,11 @@ public class MinestuckArsenalItems {
 		registry.register(arrayModus);
 		registry.register(walletModus);
 		registry.register(moneyModus);
+		
+		//Override Minestuck Items
+				registry.register(caledfwlch);
+				registry.register(fearNoAnvil);
+				registry.register(mwrthwl);
 		
 		
 	}

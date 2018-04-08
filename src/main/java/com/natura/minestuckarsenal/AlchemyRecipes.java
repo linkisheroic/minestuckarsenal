@@ -95,6 +95,11 @@ public class AlchemyRecipes {
 		
 		GristRegistry.addGristConversion(new ItemStack(eightballScythe), false, new GristSet(GristType.Cobalt, 8888));
 		
+		GristRegistry.addGristConversion(new ItemStack(houseKey), false, new GristSet(new GristType[] {GristType.Rust, GristType.Build}, new int[] {12, 16}));
+		GristRegistry.addGristConversion(new ItemStack(keyblade), false, new GristSet(new GristType[] {GristType.Rust, GristType.Amber, GristType.Diamond}, new int[] {400, 250, 1}));
+		GristRegistry.addGristConversion(new ItemStack(trueBlue), false, new GristSet(new GristType[] {GristType.Cobalt, GristType.Build, ArsenalGrist.Aquamarine}, new int[] {8888, 8000, 1}));
+		GristRegistry.addGristConversion(new ItemStack(yaldabaothsKeyton), false, new GristSet(new GristType[] {GristType.Rust, GristType.Ruby, ArsenalGrist.Blood, ArsenalGrist.Neon, GristType.Diamond}, new int[] {40000, 10000, 60000, 500, 1}));
+		
 		GristRegistry.addGristConversion(new ItemStack(mineNGrist), false, new GristSet(new GristType[] {ArsenalGrist.Blood, ArsenalGrist.Frosting, ArsenalGrist.Iron, GristType.Chalk}, new int[] {5000, 6500, 4000, 2500, 1}));
 		
 		GristRegistry.addGristConversion(new ItemStack(magicEightBall), false, new GristSet(GristType.Cobalt, 8));
@@ -204,6 +209,8 @@ public class AlchemyRecipes {
 		CombinationRegistry.addCombination(new ItemStack(slimeSuitShoes), new ItemStack(wiseguyBook), MODE_OR, new ItemStack(wiseguySlimesuitShoes));
 		CombinationRegistry.addCombination(new ItemStack(scalemate, 1, 1), new ItemStack(MinestuckItems.cane), MODE_OR, new ItemStack(MinestuckItems.dragonCane));
 		CombinationRegistry.addCombination(new ItemStack(MinestuckItems.ironCane), new ItemStack(MinestuckItems.rawUranium), MODE_OR, new ItemStack(radioactiveStaff));
+		CombinationRegistry.addCombination(new ItemStack(keyblade), new ItemStack(magicEightBall), MODE_OR, new ItemStack(trueBlue));
+		
 		
 		//Alchemy Recipes MODE_AND
 		CombinationRegistry.addCombination(new ItemStack(MinestuckItems.candy, 1, 4), new ItemStack(blueEctoSlime), CombinationRegistry.MODE_AND, new ItemStack(phlegmGushers));
@@ -242,6 +249,8 @@ public class AlchemyRecipes {
 		CombinationRegistry.addCombination(new ItemStack(Items.BLAZE_ROD), new ItemStack(MinestuckItems.cane), MODE_AND, new ItemStack(blazingGlory));
 		CombinationRegistry.addCombination(new ItemStack(Blocks.DOUBLE_PLANT, 1, 4), new ItemStack(MinestuckItems.sickle), MODE_AND, new ItemStack(thornySubject));
 		CombinationRegistry.addCombination(new ItemStack(MinestuckBlocks.crockerMachine), new ItemStack(Items.IRON_PICKAXE), MODE_AND, new ItemStack(mineNGrist));
+		CombinationRegistry.addCombination(new ItemStack(houseKey), new ItemStack(Items.IRON_SWORD), MODE_AND, new ItemStack(keyblade));
+		CombinationRegistry.addCombination(new ItemStack(keyblade), new ItemStack(MinestuckItems.unbreakableKatana), MODE_AND, new ItemStack(yaldabaothsKeyton));
 	}
 	
 	public static void registerVanillaRecipes() 

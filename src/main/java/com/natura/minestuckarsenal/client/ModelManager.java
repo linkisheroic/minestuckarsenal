@@ -73,6 +73,11 @@ public class ModelManager {
 		
 		register(goldenSpork);
 		
+		register(houseKey);
+		register(keyblade);
+		register(trueBlue);
+		register(yaldabaothsKeyton);
+		
 		register(aks);
 		
 		register(woodenTrident);
@@ -180,7 +185,7 @@ public class ModelManager {
 		
 		register(horn);
 		
-		register(boondollar);
+		//register(boondollar);
 		register(boonbuck);
 		register(booncase);
 		

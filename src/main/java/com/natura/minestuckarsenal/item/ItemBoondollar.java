@@ -62,10 +62,10 @@ public class ItemBoondollar extends Item {
 			ItemStack held = playerIn.getHeldItem(handIn);
 			PlayerData data = MinestuckPlayerData.getData(playerIn);
 			ITextComponent message = new TextComponentTranslation("You recieved " + String.valueOf(value) + " boondollars!");
-			if(held.getItem() == MinestuckArsenalItems.boondollar) {
+			/*if(held.getItem() == MinestuckArsenalItems.boondollar) {
 				Random rand = new Random();
 				this.value = rand.nextInt(100) + 1;
-			}
+			}*/
 			if(!worldIn.isRemote) {
 				data.boondollars += value;	
 				playerIn.sendMessage(message);
