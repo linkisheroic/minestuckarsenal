@@ -31,7 +31,7 @@ public class ItemBoondollar extends Item {
 	public ItemBoondollar(String name, int value)
 	{
 		super();
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
+		
 		this.setUnlocalizedName(name);
 		this.value = value;
 		

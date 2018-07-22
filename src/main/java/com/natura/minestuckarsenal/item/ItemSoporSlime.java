@@ -16,7 +16,6 @@ public class ItemSoporSlime extends ItemFood {
 		super(2, 0, false);
 		setUnlocalizedName("soporSlime");
 		setRegistryName("sopor_slime");
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
 		setAlwaysEdible();
 		setMaxStackSize(16);
 	}

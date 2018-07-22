@@ -41,7 +41,7 @@ public class ItemDiceWeapon extends ItemSword //To allow enchantments such as sh
 	{
 		super(ToolMaterial.IRON);
 		this.maxStackSize = 1;
-		this.setCreativeTab(CreativeTabs.COMBAT);	//Needed to place recipes in the combat/tools tab
+			//Needed to place recipes in the combat/tools tab
 		this.setMaxDamage(maxUses);
 		this.weaponDamage = damageVsEntity;
 		this.enchantability = enchantability;

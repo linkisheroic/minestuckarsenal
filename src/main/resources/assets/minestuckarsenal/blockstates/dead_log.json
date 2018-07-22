@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "axis=y":    { "model": "minestuckarsenal:dead_log" },
+        "axis=z":     { "model": "minestuckarsenal:dead_log", "x": 90 },
+        "axis=x":     { "model": "minestuckarsenal:dead_log", "x": 90, "y": 90 },
+        "axis=none":   { "model": "minestuckarsenal:dead_bark" },
+		"inventory": { "model": "minestuckarsenal:dead_log" }
+    }
+}

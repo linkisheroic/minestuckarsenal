@@ -1,16 +1,33 @@
 package com.natura.minestuckarsenal;
 
+import com.natura.minestuckarsenal.item.ItemDreamArmor;
 import com.natura.minestuckarsenal.item.MinestuckArsenalItems;
 
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
 public class ItemAttackEventHandler {
 
 	public ItemAttackEventHandler() {
 		
 	}
+	
+	/*@SubscribeEvent
+	public void onPlayerTick(PlayerTickEvent e) {
+		if(e.player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() instanceof ItemDreamArmor && e.player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() instanceof ItemDreamArmor && e.player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() instanceof ItemDreamArmor)
+		{
+			e.player.capabilities.allowFlying = true;
+		
+		}
+		
+		else if(!e.player.capabilities.isCreativeMode) {
+			e.player.capabilities.allowFlying = false;
+			e.player.capabilities.isFlying = false;
+		}
+	}*/
 	
 	@SubscribeEvent
 	public void onMobHit(LivingAttackEvent e) {

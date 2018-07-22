@@ -20,6 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -28,6 +29,9 @@ import com.mraof.minestuck.item.ItemMinestuckCandy;
 import com.mraof.minestuck.item.weapon.ItemDualWeapon;
 import com.mraof.minestuck.util.GristType;
 import com.natura.minestuckarsenal.ArsenalGrist;
+import com.natura.minestuckarsenal.MinestuckArsenalConfig;
+import com.natura.minestuckarsenal.item.ItemDualGunWeapon;
+import com.natura.minestuckarsenal.item.ItemHarpoonWeapon;
 import com.natura.minestuckarsenal.item.ItemScalemate;
 
 @SideOnly(Side.CLIENT)
@@ -36,18 +40,47 @@ public class ModelManager {
 	@SubscribeEvent
 	public static void handleModelRegistry(ModelRegistryEvent event)
 	{
+		
 		itemModels();
 		blockModels();
+		
 	}
 	
 	private static void itemModels()
 	{
+		
+		//High def textures
+		if(MinestuckArsenalConfig.use32Textures) {
+			
+			register(caledfwlch, 0, "caledfwlch_32");
+			register(poseidonsEntente, 0, "poseidons_entente_32");
+			register(imperialFork, 0, "emperial_fork_32");
+			register(woodenTrident, 0, "wooden_trident_32");
+			register(silverTrident, 0, "silver_trident_32");
+			register(goldTrident, 0, "gold_trident_32");
+			register(ahabsCrosshairs, 0, "ahabs_crosshairs_32");
+			
+		}
+		
+		//Normal textures
+		else {
+			
+			register(caledfwlch);
+			register(poseidonsEntente);
+			register(imperialFork);
+			register(woodenTrident);
+			register(silverTrident);
+			register(goldTrident);
+			register(ahabsCrosshairs);
+			
+		}
+		
 		register(paperSword);
 		register(chainsawKatana);
 		register(ancestralSword);
 		register(cutlass);
+		register(candySword);
 		
-		register(caledfwlch);
 		register(fearNoAnvil);
 		register(mwrthwl);
 	
@@ -73,19 +106,31 @@ public class ModelManager {
 		
 		register(goldenSpork);
 		
-		register(houseKey);
+		ModelLoader.registerItemVariants(houseKey, new ResourceLocation("minestuckarsenal:house_key_sheathed"), new ResourceLocation("minestuckarsenal:house_key_drawn"));
+		ModelLoader.setCustomMeshDefinition(houseKey, new DualGunWeaponDefinition(houseKey));
+		
+		register(keyboardKey);
 		register(keyblade);
 		register(trueBlue);
+		register(candyKey);
+		register(chronolatch);
 		register(yaldabaothsKeyton);
+		register(allweddol);
 		
+		register(twirlingBaton);
+		register(conductorsBaton);
+		register(nightstick);
+		register(uraniumBaton);
+		register(windwaker);
+		register(celestialFulcrum);
+		
+		register(keyAxe);
+		register(stoneColdKeyAxe);
+		
+		register(candyAxe);
+		register(shadowAxe);
+		register(massDeduction);
 		register(aks);
-		
-		register(woodenTrident);
-		register(silverTrident);
-		register(goldTrident);
-		
-		register(poseidonsEntente);
-		register(imperialFork);
 		
 		register(joustingLance);
 		register(fiduspawnLance);
@@ -101,10 +146,10 @@ public class ModelManager {
 		register(bladedCane);
 		
 		ModelLoader.registerItemVariants(blackStaff, new ResourceLocation("minestuckarsenal:black_staff_sheathed"), new ResourceLocation("minestuckarsenal:black_staff_drawn"));
-		ModelLoader.setCustomMeshDefinition(blackStaff, new DualWeaponDefinition(blackStaff));
+		ModelLoader.setCustomMeshDefinition(blackStaff, new DualGunWeaponDefinition(blackStaff));
 		
 		ModelLoader.registerItemVariants(goldStaff, new ResourceLocation("minestuckarsenal:gold_staff_sheathed"), new ResourceLocation("minestuckarsenal:gold_staff_drawn"));
-		ModelLoader.setCustomMeshDefinition(goldStaff, new DualWeaponDefinition(goldStaff));
+		ModelLoader.setCustomMeshDefinition(goldStaff, new DualGunWeaponDefinition(goldStaff));
 		
 		register(crowbar);
 		register(pogoCane);
@@ -125,6 +170,12 @@ public class ModelManager {
 		ModelLoader.registerItemVariants(ragripper, new ResourceLocation("minestuckarsenal:demonbane_ragripper_sheathed"), new ResourceLocation("minestuckarsenal:demonbane_ragripper_drawn"));
 		ModelLoader.setCustomMeshDefinition(ragripper, new DualWeaponDefinition(ragripper));
 		
+		ModelLoader.registerItemVariants(daintyDisembowler, new ResourceLocation("minestuckarsenal:dainty_disembowler_sheathed"), new ResourceLocation("minestuckarsenal:dainty_disembowler_drawn"));
+		ModelLoader.setCustomMeshDefinition(daintyDisembowler, new DualWeaponDefinition(daintyDisembowler));
+		
+		ModelLoader.registerItemVariants(uraniumChainsaw, new ResourceLocation("minestuckarsenal:uranium_chainsaw_sheathed"), new ResourceLocation("minestuckarsenal:uranium_chainsaw_drawn"));
+		ModelLoader.setCustomMeshDefinition(uraniumChainsaw, new DualWeaponDefinition(uraniumChainsaw));
+		
 		ModelLoader.registerItemVariants(horseHitcher, new ResourceLocation("minestuckarsenal:horse_hitcher_sheathed"), new ResourceLocation("minestuckarsenal:horse_hitcher_drawn"));
 		ModelLoader.setCustomMeshDefinition(horseHitcher, new DualWeaponDefinition(horseHitcher));
 		
@@ -137,8 +188,11 @@ public class ModelManager {
 		register(branch);
 		register(broom);
 		
+		register(scythe);
 		register(eightballScythe);
 		register(mineNGrist);
+		
+		register(horseFootballPlayer);
 		
 		register(appleJuice);
 		register(scottyDog);
@@ -152,6 +206,7 @@ public class ModelManager {
 		register(ectoCookie);
 		register(ectoLoaf);
 		register(ectoSteak);
+		register(cakeMix);
 		
 		register(barbasol);
 		register(clothesIron);
@@ -161,6 +216,7 @@ public class ModelManager {
 		register(magicEightBall);
 		register(crystalBall);
 		register(wiseguyBook);
+		register(sassacreText);
 		register(grimoire);
 		register(flarpManual);
 		register(athManual);
@@ -169,6 +225,7 @@ public class ModelManager {
 		register(inkSquidProQuo);
 		register(blueEctoSlime);
 		register(faygoEcto);
+		register(seahorseIdol);
 		
 		for(int i = 0; i < ItemScalemate.names.length; i++)
 			register(scalemate, i, "scalemate_" + ItemScalemate.names[i]);
@@ -188,6 +245,9 @@ public class ModelManager {
 		//register(boondollar);
 		register(boonbuck);
 		register(booncase);
+		
+		register(ringOfVoid);
+		register(ringOfLife);
 		
 		register(trollHeadband);
 		register(dirkShades);
@@ -225,17 +285,24 @@ public class ModelManager {
 		register(wiseguySlimesuitPants);
 		register(wiseguySlimesuitShoes);
 		
+		register(bullet);
 		register(huntingRifle);
+		
+		ModelLoader.registerItemVariants(harpoonGun, new ResourceLocation("minestuckarsenal:harpoon_gun_loaded"), new ResourceLocation("minestuckarsenal:harpoon_gun_unloaded"));
+		ModelLoader.setCustomMeshDefinition(harpoonGun, new HarpoonWeaponDefinition(harpoonGun));
+		
 		register(girlsBestFriend);
 		register(greenSunStreetSweeper);
 		register(beretta);
 		register(goldBeretta);
-		register(ahabsCrosshairs);
+		register(gunblade);
+		register(gunOfSouls);
 		
 		register(arrayModus);
 		register(walletModus);
 		register(moneyModus);
 		
+		//Grist candy models.
 		register(candy, GristType.REGISTRY.getID(ArsenalGrist.Acid) + 1, "acid_soda");
 		register(candy, GristType.REGISTRY.getID(ArsenalGrist.Aquamarine) + 1, "aquamarine_candy_buttons");
 		register(candy, GristType.REGISTRY.getID(ArsenalGrist.Blood) + 1, "blood_kool_aid");
@@ -279,43 +346,117 @@ public class ModelManager {
 	{
 		register(uniqueObject);
 		register(kringlefucker);
+		
 		register(frostLog);
+		register(frostPlanks);
 		register(frostLeaves);
+		register(deadLog);
+		
 		register(sendificator);
+		register(uraniumBlock);
+		register(powerHub);
+		register(gristGatherer);
+		
+		register(chalk);
+		register(chalkPolished);
+		register(chalkBricks);
+		register(chalkBricksChiseled);
+		
+		register(pinkStone);
+		register(pinkStonePolished);
+		register(pinkStoneBricks);
+		register(pinkStoneBricksChiseled);
+		register(pinkStoneBricksCracked);
+		register(pinkStoneBricksMossy);
+		
 	}
 	
 	private static void register(Item item)
 	{
+		
 		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Item.REGISTRY.getNameForObject(item), "inventory"));
+	
 	}
 	
 	private static void register(Item item, int meta, String modelResource)
 	{
+		
 		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation("minestuckarsenal:"+modelResource, "inventory"));
+	
 	}
 	
 	private static void register(Block block)
 	{
+		
 		register(Item.getItemFromBlock(block));
+		
 	}
 	
 	private static class DualWeaponDefinition implements ItemMeshDefinition
 	{
+		
 		private Item item;
+		
 		public DualWeaponDefinition(Item item){
 			this.item=item;
 		}
+		
 		@Override
 		public ModelResourceLocation getModelLocation(ItemStack stack)
 		{
 			if(((ItemDualWeapon)this.item).IsDrawn(stack)){
 				
 				return new ModelResourceLocation(item.getRegistryName() + "_drawn","inventory");
+				
+			}
+			
+			else {
+				
+				return new ModelResourceLocation(item.getRegistryName() + "_sheathed","inventory");
+				
+			}
+				
+		}
+		
+	}	
+	
+	private static class HarpoonWeaponDefinition implements ItemMeshDefinition
+	{
+		private Item item;
+		public HarpoonWeaponDefinition(Item item){
+			this.item=item;
+		}
+		@Override
+		public ModelResourceLocation getModelLocation(ItemStack stack)
+		{
+			if(((ItemHarpoonWeapon)this.item).isLoaded(stack)){
+				
+				return new ModelResourceLocation(item.getRegistryName() + "_loaded","inventory");
+			}else
+				return new ModelResourceLocation(item.getRegistryName() + "_unloaded","inventory");
+			
+		}
+	}
+	
+	private static class DualGunWeaponDefinition implements ItemMeshDefinition
+	{
+		private Item item;
+		public DualGunWeaponDefinition(Item item){
+			this.item=item;
+		}
+		@Override
+		public ModelResourceLocation getModelLocation(ItemStack stack)
+		{
+			if(((ItemDualGunWeapon)this.item).isDrawn(stack)){
+				
+				return new ModelResourceLocation(item.getRegistryName() + "_drawn","inventory");
 			}else
 				return new ModelResourceLocation(item.getRegistryName() + "_sheathed","inventory");
 			
 		}
-	}	
+	}
+	
+		
 	private static class ChainsawDefinition implements ItemMeshDefinition
 	{
 		private Item item;
@@ -335,4 +476,5 @@ public class ModelManager {
 			}
 		}
 	}
+	
 }

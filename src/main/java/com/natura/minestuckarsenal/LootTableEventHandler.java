@@ -24,11 +24,22 @@ public LootTableEventHandler() {
 		if (event.getName().equals(AlchemyRecipeHandler.BASIC_MEDIUM_CHEST)) {
 			LootEntry entry = new LootEntryTable(new ResourceLocation("minestuckarsenal", "inject/medium_addon"), 1, 1, new LootCondition[0], "medium_addon"); // weight doesn't matter since it's the only entry in the pool. Other params set as you wish.
 
+			
 			LootPool pool = new LootPool(new LootEntry[] {entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 2), "medium_addon"); // Other params set as you wish.
 
+			
 			event.getTable().addPool(pool);
 
 	    }
+		
+		else if(event.getName().equals(LootTableList.GAMEPLAY_FISHING_FISH)) {
+			
+			LootEntry fishingEntry = new LootEntryTable(new ResourceLocation("minestuckarsenal", "inject/fishing_addon"), 1, 1, new LootCondition[0], "fishing_addon"); // weight doesn't matter since it's the only entry in the pool. Other params set as you wish.
+			
+			LootPool poolFish = new LootPool(new LootEntry[] {fishingEntry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 2), "fishing_addon"); // Other params set as you wish.
+
+			event.getTable().addPool(poolFish);
+		}
 	}
 	
 }

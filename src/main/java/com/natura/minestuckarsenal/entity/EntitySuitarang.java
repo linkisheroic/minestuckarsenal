@@ -5,8 +5,10 @@ import com.natura.minestuckarsenal.item.MinestuckArsenalItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.math.RayTraceResult;
@@ -15,7 +17,7 @@ import net.minecraft.world.World;
 public class EntitySuitarang extends EntityThrowable {
 
 	private EntityLivingBase throwerIn;
-	 
+	
 	 public EntitySuitarang(World worldIn)
 	    {
 	        super(worldIn);
@@ -55,6 +57,7 @@ public class EntitySuitarang extends EntityThrowable {
 	        if (!this.world.isRemote)
 	        {
 	            this.world.setEntityState(this, (byte)3);
+	            
 	            this.setDead();
 	        }
 	    }

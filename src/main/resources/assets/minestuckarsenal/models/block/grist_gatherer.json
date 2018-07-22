@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "down": "minestuckarsenal:blocks/grist_gatherer_bottom",
+		"up": "minestuckarsenal:blocks/grist_gatherer_top",
+		"north": "minestuckarsenal:blocks/grist_gatherer_side",
+        "south": "minestuckarsenal:blocks/grist_gatherer_side",
+		"east": "minestuckarsenal:blocks/grist_gatherer_side",
+		"west": "minestuckarsenal:blocks/grist_gatherer_side",
+		"particle": "minestuckarsenal:blocks/grist_gatherer_side"
+    }
+}

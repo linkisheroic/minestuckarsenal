@@ -13,7 +13,6 @@ public class ItemScalemate extends Item {
 	
 	public ItemScalemate() {
 		this.setHasSubtypes(true);
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
 		this.setUnlocalizedName("scalemate");
 		this.setRegistryName("scalemate");
 	}

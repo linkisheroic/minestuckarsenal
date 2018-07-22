@@ -24,7 +24,6 @@ public class ItemSuitarang extends Item {
 	{
 		super();
 		this.maxStackSize = 16;
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
 		this.setUnlocalizedName(name);
 	}
 	

@@ -1,0 +1,46 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+        "particle": "minestuckarsenal:blocks/power_hub_top"
+    },
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 12, 16],
+			"faces": {
+				"north": {"uv": [0, 4, 16, 16], "texture": "#front", "cullface": "north"},
+				"east": {"uv": [0, 4, 16, 16], "texture": "#side", "cullface": "east"},
+				"south": {"uv": [0, 4, 16, 16], "texture": "#side", "cullface": "south"},
+				"west": {"uv": [0, 4, 16, 16], "texture": "#side", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#top"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#bottom", "cullface": "down"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.5, 0.4, 0.5],
+			"translation": [0, 0, 0]
+		},
+		"ground": {
+			"scale": [0.5, 0.4, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.5, 0.4, 0.5]
+		},
+		"firstperson_righthand": {
+			"scale": [0.5, 0.4, 0.5]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.5, 0.4, 0.5]
+		},
+		"fixed": {
+			"scale": [0.5, 0.4, 0.5]
+		},
+		"gui": {
+			"scale": [0.5, 0.4, 0.5],
+			"rotation": [12, 20.5, 0]
+		}
+	}
+}

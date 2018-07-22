@@ -23,7 +23,7 @@ public class ItemCaptcharoidCamera extends Item {
 		super();
 		this.maxStackSize = 1;
 		this.setMaxDamage(64);
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
+		
 		this.setUnlocalizedName("captcharoidCamera");
 		this.setRegistryName("captcharoid_camera");
 	}

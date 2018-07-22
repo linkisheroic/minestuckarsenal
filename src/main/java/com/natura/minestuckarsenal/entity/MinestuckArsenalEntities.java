@@ -1,6 +1,7 @@
 package com.natura.minestuckarsenal.entity;
 
 import com.mraof.minestuck.Minestuck;
+import com.mraof.minestuck.entity.item.EntityCrewPoster;
 import com.natura.minestuckarsenal.MinestuckArsenal;
 
 import net.minecraft.entity.Entity;
@@ -13,8 +14,10 @@ public class MinestuckArsenalEntities {
 	
 	public static void registerEntities()
 	{
+		registerEntity(EntityBullet.class, "bullet");
 		registerEntity(EntityBarbasolBomb.class, "barbasol_bomb");
 		registerEntity(EntitySuitarang.class, "suitarang");
+		registerEntity(EntityHorsePoster.class, "horseFootballPlayerPoster", "horse_football_player_poster");
 	}
 	
 	public static void registerEntity(Class<? extends Entity> entityClass, String name)

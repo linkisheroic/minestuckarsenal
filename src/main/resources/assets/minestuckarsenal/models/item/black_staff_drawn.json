@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "minestuckarsenal:items/black_staff"
+        "layer0": "minestuckarsenal:items/assault_rifle"
     }
 }

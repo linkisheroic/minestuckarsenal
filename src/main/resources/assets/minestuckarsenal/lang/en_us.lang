@@ -6,8 +6,50 @@ item.chainsawKatana.name=Chainsaw Katana
 item.chainsawKatana.tooltip=The best weapon.
 item.cutlass.name=Cutlass
 item.ancestralSword.name=Ancestral Blade
+item.candySword.name=Candy Corn Greatsword
 
+item.chronolatch.name=Chronolatch
+item.candyKey.name=Season's Key-tings 
 
+item.keyboardKey.name=Keyboard 
+
+item.allweddol.name=Allweddol
+item.allweddol.tooltip=Dumb Welsh... Key? Okay, this is getting out of hand.
+
+item.candyAxe.name=Candy Corn Battleaxe
+
+item.keyAxe.name=Key-Axe
+item.keyAxe.tooltip=Finally, the power of a key and an axe, all in one convenient package!
+
+item.stoneColdKeyAxe.name=Stone Cold Key-Axe
+item.stoneColdKeyAxe.tooltip=Your hands suffer AlMOST as much as your enemies...
+
+item.twirlingBaton.name=Twirling Baton
+
+item.conductorsBaton.name=Conductor's Baton
+item.conductorsBaton.tooltip=On my cue...
+
+item.nightstick.name=Nightstick
+item.nightstick.tooltip=You are the law.
+
+item.uraniumBaton.name=Uranium Baton
+
+item.windwaker.name=The Wind Waker
+item.windwaker.tooltip=Doesn't actually control the wind.
+
+item.celestialFulcrum.name=Celestial Fulcrum
+item.celestialFulcrum.tooltip=A single constellation, formed into an awe inspiring baton.
+
+item.massDeduction.name=Weapon of Mass Deduction
+item.massDeduction.tooltip=Just a little off the top...
+
+item.scythe.name=Scythe
+item.scythe.tooltip=Like the kind you farm with.
+
+item.shadowAxe.name=Hearts Boxcar's Axe of Shadows
+item.shadowAxe.tooltip=Retrieved from the wrathtub of Hearts Boxcar himself.
+
+item.horseFootballPlayerPoster.name=Painting of a Horse Attacking a Football Player
 
 item.brokenRoyalDeringer.name=Broken Royal Deringer
 
@@ -45,7 +87,8 @@ item.quillsOfEchidna.name=Quills of Echidna
 
 item.goldenSpork.name=Golden Spork
 
-item.houseKey.name=House Key
+item.houseKeySheathed.name=House Key
+item.houseKeyDrawn.name=Handgun
 item.keyblade.name=Keyblade
 item.trueBlue.name=True Blue
 item.yaldabaothsKeyton.name=Yaldabaoth's Key-ton
@@ -65,6 +108,18 @@ item.lipstickChainsawDrawn.tooltip=Perfect for landscaping around your respitebl
 
 item.lipstickChainsawSheathed.name=Jade Lipstick
 item.lipstickChainsawSheathed.tooltip=What chainsaw? You are quite sure there is no chainsaw in your inventory.
+
+item.daintyDisembowlerDrawn.name=Dainty Disembowler
+item.daintyDisembowlerDrawn.tooltip=For when you don't want to get your dress dirty.
+
+item.daintyDisembowlerSheathed.name=Lovely Lipbalm
+item.daintyDisembowlerSheathed.tooltip=Just a hint of perfume.
+
+item.uraniumChainsawDrawn.name=Uranium Chainsaw
+item.uraniumChainsawDrawn.tooltip=All of the science has been leading up to this pinnacle of human achievment.
+
+item.uraniumChainsawSheathed.name=Corroded Lipstick
+item.uraniumChainsawSheathed.tooltip=You don't want to think about the consequences of touching this...
 
 item.demonbaneRagripperDrawn.name=Demonbane Ragripper
 item.demonbaneRagripperDrawn.tooltip=A fearsome chainsaw, feared by many on Alternia.
@@ -147,11 +202,11 @@ item.hostPlush.name=Fiduspawn Host Plush
 
 item.cuttlefish.name=Cuttlefish
 
-item.blackStaffDrawn.name=Black Staff
-item.blackStaffSheathed.name=Black Assault Rifle
+item.blackStaffDrawn.name=Black Assault Rifle
+item.blackStaffSheathed.name=Black Staff
 
-item.goldStaffDrawn.name=Gold Staff
-item.goldStaffSheathed.name=Gold Assault Rifle
+item.goldStaffDrawn.name=Gold Assault Rifle
+item.goldStaffSheathed.name=Gold Staff
 
 item.pogoCane.name=Pogo-Cane
 
@@ -203,6 +258,8 @@ item.barbasolBomb.name=Betty Crocker Barbasol Bomb
 item.barbasolBomb.tooltip=Jesus, be careful with that thing!
 
 item.wiseguy.name=Harry Anderson: Wise Guy
+
+item.sassacreText.name=Colonel Sassacre's Daunting Text of Magical Frivolity and Practical Japery
 
 item.grimoire.name=Grimoire for Summoning the Zoologically Dubious
 
@@ -305,6 +362,16 @@ item.beretta.name=M9 Beretta
 
 item.goldBeretta.name=Golden M9 Beretta
 
+item.gunblade.name=Gunblade
+
+item.gunOfSouls.name=Gun of Souls
+
+item.seahorseIdol.name=Searhose Idol
+
+item.harpoonGun.name=Harpoon Gun
+item.harpoonGunLoaded.name=Harpoon Gun
+item.harpoonGunUnloaded.name=Harpoon Gun
+
 item.crystalBall.name=Crystal Ball
 
 item.fearNoAnvil.tooltip=What's to fear with this around? Once the weapon of Hephaestus, it can freeze enemies in place!
@@ -322,14 +389,44 @@ item.sord.tooltip=This thing is so unspeakably shitty you are having a hard time
 item.aks.name=AKS...
 item.aks.tooltip=This seems familiar.
 
+item.ringOfVoid.name=Ring of Void
+item.ringOfVoid.tooltip=This ring does nothing.
+
+item.ringOfLife.name=Ring Of Life
+item.ringOfLife.tooltip=This ring does everything.
+
+item.cakeMix.name=Betty Crocker Cake Mix
+
 tile.uniqueObject.name=Perfectly Unique Object
 
 tile.frostLog.name=Frost Log
+tile.frostPlanks.name=Frost Planks
 tile.frostLeaves.name=Frost Leaves
 
+tile.deadLog.name=Dead Log
+
 tile.sendificator.name=Sendificator
+tile.powerHub.name=Power Hub
+tile.gristGatherer.name=Grist Gatherer
 
 tile.kringlefucker.name=Kringlefucker
+
+tile.uraniumBlock.name=Uranium Block
+
+tile.chalk.name=Chalk
+tile.chalkPolished.name=Polished Chalk
+tile.chalkBricks.name=Chalk Bricks
+tile.chalkBricksChiseled.name=Chiseled Chalk Bricks
+
+tile.pinkStone.name=Pink Stone
+tile.pinkStonePolished.name=Polished Pink Stone
+tile.pinkStoneBricks.name=Pink Stone Bricks
+tile.pinkStoneBricksChiseled.name=Chiseled Pink Stone Bricks
+tile.pinkStoneBricksCracked.name=Cracked Pink Stone Bricks
+tile.pinkStoneBricksMossy.name=Mossy Pink Stone Bricks
+
+group.tabArsenal=Minestuck Arsenal
+itemGroup.tabArsenal=Minestuck Arsenal
 
 minestuckarsenal.subtitle.pickupGrist=Picked up Grist
 minestuckarsenal.subtitle.pickupVitalityGel=Picked up Vitality Gel
@@ -408,3 +505,9 @@ grist.polychromite=Polychromite
 grist.rainbow=Rainbow
 grist.opal=Opal
 grist.plasma=Plasma
+
+material.cruxite.name=Cruxite
+modifier.carvable.name=Carvable
+
+material.castiron.name=Cast Iron
+modifier.rusting.name=Rusting

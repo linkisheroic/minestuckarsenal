@@ -14,7 +14,6 @@ public class ItemEctoFood extends ItemFood {
 	public ItemEctoFood(int feedAmount, float saturation, boolean isWolfFood, String name, float healAmount) {
 		super(feedAmount, saturation, isWolfFood);
 		setUnlocalizedName(name);
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
 		setAlwaysEdible();
 		this.healAmount = healAmount;
 	}

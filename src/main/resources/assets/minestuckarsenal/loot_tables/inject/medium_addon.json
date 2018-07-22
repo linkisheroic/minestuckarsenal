@@ -7,12 +7,22 @@
                 {
                     "type": "item",
                     "name": "minestuckarsenal:host_plush",
-                    "weight": 5
+                    "weight": 8
                 },
 				{
 					"type": "item",
-					"name": "minestuckarsenal:jousting_lance",
+					"name": "minestuckarsenal:cake_mix",
 					"weight": 5
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:sassacre_text",
+					"weight": 7
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:jousting_lance",
+					"weight": 12
 				},
 				{
 					"type": "item",
@@ -22,7 +32,7 @@
 				{
 					"type": "item",
 					"name": "minestuckarsenal:magic_eight_ball",
-					"weight":5
+					"weight":9
 				},
 				{
 					"type": "item",
@@ -31,38 +41,48 @@
 				},
 				{
 					"type": "item",
+					"name": "minestuckarsenal:ring_of_void",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:ring_of_life",
+					"weight": 1
+				},
+				{
+					"type": "item",
 					"name": "minestuckarsenal:leather_whip",
-					"weight": 5
+					"weight": 8
 				},
 				{
 					"type": "item",
 					"name": "minestuckarsenal:wooden_bat",
-					"weight": 5
+					"weight": 11
 				},
 				{
 					"type": "item",
 					"name": "minestuckarsenal:wooden_trident",
-					"weight": 3
+					"weight": 12
 				},
 				{
 					"type": "item",
 					"name": "minestuckarsenal:silver_trident",
-					"weight": 2
-				},
-				{
-					"type": "item",
-					"name": "minestuckarsenal:knitting_needles",
-					"weight": 5
-				},
-				{
-					"type": "item",
-					"name": "minestuckarsenal:broken_katana",
 					"weight": 4
 				},
 				{
 					"type": "item",
-					"name": "minestuckarsenal:paper_sword",
+					"name": "minestuckarsenal:knitting_needles",
+					"weight": 8
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:broken_katana",
 					"weight": 6
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:paper_sword",
+					"weight": 7
 				},
 				{
 					"type": "item",
@@ -72,7 +92,22 @@
 				{
 					"type": "item",
 					"name": "minestuckarsenal:barbasol",
+					"weight": 14
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:twirling_baton",
+					"weight": 9
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:conductors_baton",
 					"weight": 8
+				},
+				{
+					"type": "item",
+					"name": "minestuckarsenal:crystal_ball",
+					"weight": 6
 				},
 				{
 					"type": "item",
@@ -87,17 +122,12 @@
 				{
 					"type": "item",
 					"name": "minestuckarsenal:wizard_statue",
-					"weight": 8
+					"weight": 9
 				},
 				{
 					"type": "item",
 					"name": "minestuckarsenal:grimoire",
-					"weight": 6
-				},
-				{
-					"type": "item",
-					"name": "minestuckarsenal:boondollar",
-					"weight": 20
+					"weight": 8
 				},
 				{
 					"type": "item",

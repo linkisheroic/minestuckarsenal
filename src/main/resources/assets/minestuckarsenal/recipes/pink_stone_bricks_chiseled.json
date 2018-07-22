@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "S S",
+	" S "
+  ],
+  "key": {
+    "S": {
+      "item": "minestuckarsenal:pink_stone_bricks"
+    }
+  },
+  "result": {
+    "item": "minestuckarsenal:pink_stone_bricks_chiseled",
+    "count": 4
+  }
+}

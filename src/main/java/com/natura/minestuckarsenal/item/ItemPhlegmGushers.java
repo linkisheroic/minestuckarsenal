@@ -14,7 +14,6 @@ public class ItemPhlegmGushers extends ItemFood {
 		setUnlocalizedName("phlegmGushers");
 		setRegistryName("phlegm_gushers");
 		setAlwaysEdible();
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
 	}
 	
 	@Override

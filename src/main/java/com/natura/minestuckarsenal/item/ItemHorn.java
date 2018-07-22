@@ -25,7 +25,6 @@ public class ItemHorn extends Item {
 	{
 		super();
 		this.maxStackSize = 1;
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
 		this.setUnlocalizedName("horn");
 		this.setRegistryName("horn");
 	}

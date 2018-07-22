@@ -1,6 +1,6 @@
 {
-    "parent": "item/handheld",
-    "textures": {
-        "layer0": "minestuckarsenal:blocks/kringlefucker"
-    }
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "minestuckarsenal:blocks/kringlefucker"
+  }
 }

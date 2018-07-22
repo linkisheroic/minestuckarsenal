@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "minestuckarsenal:blocks/dead_log",
+        "side": "minestuckarsenal:blocks/dead_log_side"
+    }
+}

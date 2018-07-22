@@ -16,7 +16,6 @@ public class ItemSorrowGushers extends ItemFood {
 		super(0, 0.0F, false);
 		setUnlocalizedName("sorrowGushers");
 		setRegistryName("sorrow_gushers");
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
 	}
 	
 	@Override

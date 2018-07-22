@@ -1,0 +1,9 @@
+{
+    "parent": "minestuckarsenal:block/base_power_hub",
+    "textures": {
+        "bottom": "minestuckarsenal:blocks/power_hub_bottom",
+		"top": "minestuckarsenal:blocks/power_hub_top",
+		"front": "minestuckarsenal:blocks/power_hub_front",
+        "side": "minestuckarsenal:blocks/power_hub_side"
+    }
+}

@@ -1,6 +1,7 @@
 package com.natura.minestuckarsenal.item;
 
 import com.mraof.minestuck.item.MinestuckItems;
+import com.natura.minestuckarsenal.TabArsenal;
 
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemFood;
@@ -11,7 +12,7 @@ public class ItemArsenalBeverage extends ItemFood {
 	public ItemArsenalBeverage(String unlocalizedName) {
 		super(1, 0, false);
 		setUnlocalizedName(unlocalizedName);
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
+		
 		setAlwaysEdible();
 		setMaxStackSize(16);
 	}

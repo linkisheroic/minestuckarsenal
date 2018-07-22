@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "S S",
+	" S "
+  ],
+  "key": {
+    "S": {
+      "item": "minestuckarsenal:chalk_polished"
+    }
+  },
+  "result": {
+    "item": "minestuckarsenal:chalk_bricks",
+    "count": 4
+  }
+}

@@ -21,7 +21,6 @@ public class BlockSendificator extends Block {
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
     public static final AxisAlignedBB AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.6D, 1.0D);
 
-	
 	public BlockSendificator(String name, String unlocalizedName) {
 		super(Material.IRON);
 		setCreativeTab(MinestuckItems.tabMinestuck);

@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "minestuckarsenal:items/gold_staff"
+        "layer0": "minestuckarsenal:items/gold_assault_rifle"
     }
 }

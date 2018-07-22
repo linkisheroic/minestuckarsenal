@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "S S",
+	" S "
+  ],
+  "key": {
+    "S": {
+      "item": "minestuckarsenal:pink_stone"
+    }
+  },
+  "result": {
+    "item": "minestuckarsenal:pink_stone_polished",
+    "count": 4
+  }
+}

@@ -19,7 +19,6 @@ public class ItemSlimeShoes extends ItemArmor {
 	public ItemSlimeShoes(String name,ItemArmor.ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
 		super(materialIn, renderIndexIn, equipmentSlotIn);
 		setUnlocalizedName(name);
-		setCreativeTab(MinestuckItems.tabMinestuck);
 	}
 	
 	@Override

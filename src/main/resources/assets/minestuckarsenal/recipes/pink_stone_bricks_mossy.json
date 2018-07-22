@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W",
+    "N"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:tallgrass",
+	  "data": 1
+    },
+	"N": {
+		"item": "minestuckarsenal:pink_stone_bricks"
+	}
+  },
+  "result": {
+    "item": "minestuckarsenal:pink_stone_bricks_mossy",
+    "count": 1
+  }
+}

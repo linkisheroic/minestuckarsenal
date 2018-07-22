@@ -15,7 +15,6 @@ public class ItemEctoDrink extends ItemFood {
 	public ItemEctoDrink(String unlocalizedName, float healAmount) {
 		super(1, 0, false);
 		setUnlocalizedName(unlocalizedName);
-		this.setCreativeTab(MinestuckItems.tabMinestuck);
 		setAlwaysEdible();
 		setMaxStackSize(16);
 		this.healAmount = healAmount;
