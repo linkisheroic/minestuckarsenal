@@ -1,38 +1,37 @@
 package com.natura.minestuckarsenal.client;
 
 import static com.mraof.minestuck.item.MinestuckItems.candy;
-import static com.mraof.minestuck.item.MinestuckItems.catClaws;
-import static com.mraof.minestuck.item.MinestuckItems.crockerSpork;
-import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.brokenCaledfwlch;
-import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.brokenNinjaSword;
-import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.brokenRoyalDeringer;
-import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.brokenScarletRibbitar;
-import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.lipstickChainsaw;
-import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.nepetaClaws;
+import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.gristGatherer;
+import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.kringlefucker;
+import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.powerHub;
+import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.sendificator;
+import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.uniqueObject;
 import static com.natura.minestuckarsenal.item.MinestuckArsenalItems.*;
-import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.*;
+
+import com.mraof.minestuck.alchemy.GristType;
+import com.mraof.minestuck.client.util.MinestuckModelManager;
+import com.mraof.minestuck.item.MinestuckItems;
+import com.mraof.minestuck.item.weapon.ItemDualWeapon;
+import com.natura.minestuckarsenal.ArsenalGrist;
+import com.natura.minestuckarsenal.MinestuckArsenalConfig;
+import com.natura.minestuckarsenal.block.MinestuckArsenalBlocks;
+import com.natura.minestuckarsenal.item.ItemDualGunWeapon;
+import com.natura.minestuckarsenal.item.ItemHarpoonWeapon;
+import com.natura.minestuckarsenal.item.ItemScalemate;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import com.mraof.minestuck.client.util.MinestuckModelManager;
-import com.mraof.minestuck.item.ItemMinestuckCandy;
-import com.mraof.minestuck.item.weapon.ItemDualWeapon;
-import com.mraof.minestuck.util.GristType;
-import com.natura.minestuckarsenal.ArsenalGrist;
-import com.natura.minestuckarsenal.MinestuckArsenalConfig;
-import com.natura.minestuckarsenal.item.ItemDualGunWeapon;
-import com.natura.minestuckarsenal.item.ItemHarpoonWeapon;
-import com.natura.minestuckarsenal.item.ItemScalemate;
 
 @SideOnly(Side.CLIENT)
 public class ModelManager {
@@ -217,7 +216,6 @@ public class ModelManager {
 		register(crystalBall);
 		register(wiseguyBook);
 		register(sassacreText);
-		register(grimoire);
 		register(flarpManual);
 		register(athManual);
 		register(trollRomance);
@@ -237,7 +235,6 @@ public class ModelManager {
 		register(suitarangDiamond);
 		register(suitarangSpade);
 		
-		register(captcharoidCamera);
 		register(sbahjifier);
 		
 		register(horn);
@@ -339,6 +336,8 @@ public class ModelManager {
 		register(candy, GristType.REGISTRY.getID(ArsenalGrist.Titanium) + 1, "titanium_twizzler");
 		register(candy, GristType.REGISTRY.getID(ArsenalGrist.Topaz) + 1, "topaz_taffy");
 		register(candy, GristType.REGISTRY.getID(ArsenalGrist.Wood) + 1, "wood_chocolate_log");
+		
+		ModelLoader.setCustomModelResourceLocation(MinestuckItems.minestuckBucket, 6, new ModelResourceLocation("minestuck:bucket_tea", "inventory"));
 
 	}
 	
@@ -347,27 +346,11 @@ public class ModelManager {
 		register(uniqueObject);
 		register(kringlefucker);
 		
-		register(frostLog);
-		register(frostPlanks);
-		register(frostLeaves);
-		register(deadLog);
-		
 		register(sendificator);
-		register(uraniumBlock);
 		register(powerHub);
 		register(gristGatherer);
 		
-		register(chalk);
-		register(chalkPolished);
-		register(chalkBricks);
-		register(chalkBricksChiseled);
-		
-		register(pinkStone);
-		register(pinkStonePolished);
-		register(pinkStoneBricks);
-		register(pinkStoneBricksChiseled);
-		register(pinkStoneBricksCracked);
-		register(pinkStoneBricksMossy);
+		ModelLoader.setCustomStateMapper(MinestuckArsenalBlocks.blockTea, (new StateMap.Builder()).ignore(BlockFluidBase.LEVEL).build());
 		
 	}
 	
@@ -429,7 +412,7 @@ public class ModelManager {
 		@Override
 		public ModelResourceLocation getModelLocation(ItemStack stack)
 		{
-			if(((ItemHarpoonWeapon)this.item).isLoaded(stack)){
+			if(((ItemHarpoonWeapon)this.item).isLoaded(stack, 0)){
 				
 				return new ModelResourceLocation(item.getRegistryName() + "_loaded","inventory");
 			}else

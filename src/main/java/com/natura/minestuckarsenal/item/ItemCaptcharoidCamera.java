@@ -1,8 +1,7 @@
 package com.natura.minestuckarsenal.item;
 
+import com.mraof.minestuck.alchemy.AlchemyRecipes;
 import com.mraof.minestuck.item.MinestuckItems;
-import com.mraof.minestuck.util.AlchemyRecipeHandler;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItemFrame;
 import net.minecraft.entity.player.EntityPlayer;
@@ -53,7 +52,7 @@ public class ItemCaptcharoidCamera extends Item {
 		
 		if(!worldIn.isRemote) {
 			ItemStack block = new ItemStack(Item.getItemFromBlock(worldIn.getBlockState(pos).getBlock()));
-			player.inventory.addItemStackToInventory(AlchemyRecipeHandler.createCard(block, true));
+			player.inventory.addItemStackToInventory(AlchemyRecipes.createCard(block, true));
 			player.getHeldItem(hand).damageItem(1, player);
 			return EnumActionResult.PASS;
 		}

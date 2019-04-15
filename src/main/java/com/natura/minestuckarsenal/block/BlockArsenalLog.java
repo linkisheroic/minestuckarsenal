@@ -1,6 +1,5 @@
 package com.natura.minestuckarsenal.block;
 
-import com.mraof.minestuck.block.BlockMinestuckLog.BlockType;
 import com.mraof.minestuck.item.MinestuckItems;
 
 import net.minecraft.block.BlockLog;

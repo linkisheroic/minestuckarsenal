@@ -5,6 +5,7 @@ import static com.natura.minestuckarsenal.block.MinestuckArsenalBlocks.uniqueObj
 
 import com.mraof.minestuck.entity.item.EntityCrewPoster;
 import com.mraof.minestuck.item.ItemHanging;
+import com.mraof.minestuck.item.ItemMinestuckBucket;
 import com.mraof.minestuck.item.ItemModus;
 import com.mraof.minestuck.item.MinestuckItems;
 import com.mraof.minestuck.item.TabMinestuck;
@@ -43,7 +44,7 @@ public class MinestuckArsenalItems {
 	public static Item mwrthwl = new ItemWeapon(12000, 47.0D, -2.4D, 30, "mwrthwl").setTool("pickaxe", 4, 5.0F).setRegistryName("minestuck", "mwrthwl").setCreativeTab(TabArsenal.instance);
 	public static Item fearNoAnvil = new ItemPotionWeapon(20000, 24.0D, -2.8D, 50, "fearNoAnvil", new PotionEffect(MobEffects.SLOWNESS, 100, 100)).setTool("pickaxe", 4, 6.0F).setRegistryName("minestuck", "fear_no_anvil").setCreativeTab(TabArsenal.instance);
 	
-	//Instantiate items.
+	//Armor materials
 	public static ItemArmor.ArmorMaterial armorTrollHeadband = EnumHelper.addArmorMaterial("TROLL_HEADBAND", "minestuckarsenal:troll_headband", 50, new int[]{2, 2, 2, 2}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 	public static ItemArmor.ArmorMaterial armorDirkGlasses = EnumHelper.addArmorMaterial("DIRK_SHADES", "minestuckarsenal:dirk_glasses", 250, new int[] {4, 5,  4,  5}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 	public static ItemArmor.ArmorMaterial armorDerse = EnumHelper.addArmorMaterial("DERSE", "minestuckarsenal:pajamas_derse", 100, new int[] {2, 6, 4, 2}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
@@ -60,6 +61,8 @@ public class MinestuckArsenalItems {
 	public static ItemArmor.ArmorMaterial armorSoothSpecs = EnumHelper.addArmorMaterial("SOOTH_SPECS", "minestuckarsenal:sooth_specs", 250, new int[] {3, 3, 3, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 	public static ItemArmor.ArmorMaterial armorDaveGlasses = EnumHelper.addArmorMaterial("GLASSES_DAVE", "minestuckarsenal:glasses_dave", 100, new int[] {2,  2,  2,  2}, 5, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 	
+	//Instantiate items.
+
 	//rings
 	public static Item ringOfVoid = new ItemVoidRing().setCreativeTab(TabArsenal.instance);
 	public static Item ringOfLife = new ItemLifeRing().setCreativeTab(TabArsenal.instance);
@@ -249,7 +252,6 @@ public class MinestuckArsenalItems {
 	public static Item wizardStatue = new Item().setRegistryName("wizard_statue").setUnlocalizedName("wizardStatue").setCreativeTab(TabArsenal.instance);
 	public static Item wiseguyBook = new Item().setRegistryName("wiseguy").setUnlocalizedName("wiseguy").setCreativeTab(TabArsenal.instance);
 	public static Item sassacreText = new Item().setRegistryName("sassacre_text").setUnlocalizedName("sassacreText").setCreativeTab(TabArsenal.instance);
-	public static Item grimoire = new Item().setRegistryName("grimoire").setUnlocalizedName("grimoire").setCreativeTab(TabArsenal.instance);
 	public static Item flarpManual = new Item().setRegistryName("flarp_manual").setUnlocalizedName("flarpManual").setCreativeTab(TabArsenal.instance);
 	public static Item athManual = new Item().setRegistryName("ath_manual").setUnlocalizedName("athManual").setCreativeTab(TabArsenal.instance);
 	public static Item trollRomance = new Item().setRegistryName("troll_romance").setUnlocalizedName("trollRomance").setCreativeTab(TabArsenal.instance);
@@ -259,7 +261,6 @@ public class MinestuckArsenalItems {
 	
 	public static Item scalemate = new ItemScalemate().setCreativeTab(TabArsenal.instance);
 	
-	public static Item captcharoidCamera = new ItemCaptcharoidCamera().setCreativeTab(TabArsenal.instance);
 	public static Item sbahjifier = new ItemSBAHJifier().setCreativeTab(TabArsenal.instance);
 	
 	public static Item horn = new ItemHorn().setCreativeTab(TabArsenal.instance);
@@ -272,11 +273,11 @@ public class MinestuckArsenalItems {
 	public static Item horseFootballPlayer = new ItemHanging()
 	{
 		@Override
-		public EntityHanging createEntity(World worldIn, BlockPos pos, EnumFacing facing, ItemStack stack)
+		public EntityHanging createEntity(World worldIn, BlockPos pos, EnumFacing facing, ItemStack stack, int meta)
 		{
 			return new EntityHorsePoster(worldIn, pos, facing);
 		}
-	}.setUnlocalizedName("horseFootballPlayerPoster").setRegistryName("horse_football_player_poster").setMaxStackSize(1).setCreativeTab(TabMinestuck.instance);
+	}.setUnlocalizedName("horseFootballPlayerPoster").setRegistryName("horse_football_player_poster").setMaxStackSize(1).setCreativeTab(TabArsenal.instance);
 	
 	//Clothing
 	public static Item trollHeadband = new ItemArmor(armorTrollHeadband, 0, EntityEquipmentSlot.HEAD).setRegistryName("troll_horn_headband").setUnlocalizedName("trollHornHeadband").setCreativeTab(TabArsenal.instance);
@@ -330,7 +331,6 @@ public class MinestuckArsenalItems {
 	public static Item walletModus = new Item().setRegistryName("wallet_modus").setUnlocalizedName("walletModus").setCreativeTab(TabArsenal.instance).setMaxStackSize(1);
 	public static Item moneyModus = new Item().setRegistryName("money_modus").setUnlocalizedName("moneyModus").setCreativeTab(TabArsenal.instance).setMaxStackSize(1);
 	
-	
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
@@ -338,26 +338,12 @@ public class MinestuckArsenalItems {
 		
 		//ItemBlocks
 		registerItemBlock(registry, new ItemBlock(uniqueObject));
-		registerItemBlock(registry, new ItemBlock(frostLog));
-		registerItemBlock(registry, new ItemBlock(frostPlanks));
-		registerItemBlock(registry, new ItemBlock(frostLeaves));
-		registerItemBlock(registry, new ItemBlock(deadLog));
 		registerItemBlock(registry, new ItemBlock(sendificator));
 		registerItemBlock(registry, new ItemBlock(kringlefucker));
-		registerItemBlock(registry, new ItemBlock(uraniumBlock));
-		registerItemBlock(registry, new ItemBlock(chalk));
-		registerItemBlock(registry, new ItemBlock(chalkPolished));
-		registerItemBlock(registry, new ItemBlock(chalkBricks));
-		registerItemBlock(registry, new ItemBlock(chalkBricksChiseled));
-		registerItemBlock(registry, new ItemBlock(pinkStone));
-		registerItemBlock(registry, new ItemBlock(pinkStonePolished));
-		registerItemBlock(registry, new ItemBlock(pinkStoneBricks));
-		registerItemBlock(registry, new ItemBlock(pinkStoneBricksChiseled));
-		registerItemBlock(registry, new ItemBlock(pinkStoneBricksCracked));
-		registerItemBlock(registry, new ItemBlock(pinkStoneBricksMossy));
 		registerItemBlock(registry, new ItemBlock(powerHub));
 		registerItemBlock(registry, new ItemBlock(gristGatherer));
 
+		
 		
 		//Override Minestuck Items
 		registry.register(caledfwlch);
@@ -518,7 +504,6 @@ public class MinestuckArsenalItems {
 		registry.register(faygoEcto);
 		
 		//other
-		registry.register(captcharoidCamera);
 		registry.register(sbahjifier);
 		
 		registry.register(horseFootballPlayer);
@@ -535,7 +520,6 @@ public class MinestuckArsenalItems {
 		registry.register(wizardStatue);
 		registry.register(wiseguyBook);
 		registry.register(sassacreText);
-		registry.register(grimoire);
 		registry.register(flarpManual);
 		registry.register(athManual);
 		registry.register(trollRomance);
@@ -594,6 +578,7 @@ public class MinestuckArsenalItems {
 		registry.register(walletModus);
 		registry.register(moneyModus);
 		
+		((ItemMinestuckBucket) MinestuckItems.minestuckBucket).addBlock(blockTea.getDefaultState());
 		
 	}
 	

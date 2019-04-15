@@ -1,58 +1,52 @@
 package com.natura.minestuckarsenal.block;
 
 import com.mraof.minestuck.block.BlockCustom;
-import com.mraof.minestuck.block.BlockMinestuckLog;
-import com.mraof.minestuck.item.MinestuckItems;
 import com.natura.minestuckarsenal.MinestuckArsenal;
 import com.natura.minestuckarsenal.TabArsenal;
 import com.natura.minestuckarsenal.tileentity.TileEntityGristGatherer;
 import com.natura.minestuckarsenal.tileentity.TileEntityHub;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.BlockFluidClassic;
-import net.minecraftforge.fluids.BlockFluidFinite;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class MinestuckArsenalBlocks {
 
 	//Blocks
 	public static Block uniqueObject = new BlockCustom(Material.GOURD, MapColor.LIME, SoundType.WOOD).setRegistryName("unique_object").setUnlocalizedName("uniqueObject").setHardness(1.0F).setCreativeTab(TabArsenal.instance);
-	public static Block uraniumBlock = new BlockCustom(Material.ROCK, MapColor.GREEN, SoundType.METAL).setRegistryName("uranium_block").setUnlocalizedName("uraniumBlock").setHardness(4.0F).setCreativeTab(TabArsenal.instance);
-	
-	public static Block chalk = new BlockCustom(Material.CLAY, MapColor.QUARTZ, SoundType.SAND).setRegistryName("chalk").setUnlocalizedName("chalk").setHardness(1.0F).setCreativeTab(TabArsenal.instance);
-	public static Block chalkPolished = new BlockCustom(Material.ROCK, MapColor.QUARTZ, SoundType.STONE).setRegistryName("chalk_polished").setUnlocalizedName("chalkPolished").setHardness(2.0F).setCreativeTab(TabArsenal.instance);
-	public static Block chalkBricks = new BlockCustom(Material.ROCK, MapColor.QUARTZ, SoundType.STONE).setRegistryName("chalk_bricks").setUnlocalizedName("chalkBricks").setHardness(2.0F).setCreativeTab(TabArsenal.instance);
-	public static Block chalkBricksChiseled = new BlockCustom(Material.ROCK, MapColor.QUARTZ, SoundType.STONE).setRegistryName("chalk_bricks_chiseled").setUnlocalizedName("chalkBricksChiseled").setHardness(2.0F).setCreativeTab(TabArsenal.instance);
-	
-	
-	public static Block pinkStone = new BlockCustom(Material.ROCK, MapColor.PINK, SoundType.STONE).setRegistryName("pink_stone").setUnlocalizedName("pinkStone").setHardness(3.0F).setCreativeTab(TabArsenal.instance);
-	public static Block pinkStonePolished = new BlockCustom(Material.ROCK, MapColor.PINK, SoundType.STONE).setRegistryName("pink_stone_polished").setUnlocalizedName("pinkStonePolished").setHardness(3.0F).setCreativeTab(TabArsenal.instance);
-	public static Block pinkStoneBricks = new BlockCustom(Material.ROCK, MapColor.PINK, SoundType.STONE).setRegistryName("pink_stone_bricks").setUnlocalizedName("pinkStoneBricks").setHardness(3.0F).setCreativeTab(TabArsenal.instance);
-	public static Block pinkStoneBricksChiseled = new BlockCustom(Material.ROCK, MapColor.PINK, SoundType.STONE).setRegistryName("pink_stone_bricks_chiseled").setUnlocalizedName("pinkStoneBricksChiseled").setHardness(3.0F).setCreativeTab(TabArsenal.instance);
-	public static Block pinkStoneBricksCracked = new BlockCustom(Material.ROCK, MapColor.PINK, SoundType.STONE).setRegistryName("pink_stone_bricks_cracked").setUnlocalizedName("pinkStoneBricksCracked").setHardness(3.0F).setCreativeTab(TabArsenal.instance);
-	public static Block pinkStoneBricksMossy = new BlockCustom(Material.ROCK, MapColor.PINK, SoundType.STONE).setRegistryName("pink_stone_bricks_mossy").setUnlocalizedName("pinkStoneBricksMossy").setHardness(3.0F).setCreativeTab(TabArsenal.instance);
-
-	public static Block frostPlanks = new BlockCustom(Material.WOOD, MapColor.CYAN, SoundType.WOOD).setRegistryName("frost_planks").setUnlocalizedName("frostPlanks").setHardness(3.0F).setCreativeTab(TabArsenal.instance);
-	public static Block frostLog = new BlockArsenalLog("frost_log", "frostLog").setHardness(3.0F).setCreativeTab(TabArsenal.instance);
-	public static Block frostLeaves = new BlockArsenalLeaves("frost_leaves", "frostLeaves").setCreativeTab(TabArsenal.instance);
-	
-	public static Block deadLog = new BlockArsenalLog("dead_log", "deadLog").setHardness(3.0F).setCreativeTab(TabArsenal.instance);
 	
 	public static Block sendificator = new BlockSendificator("sendificator", "sendificator").setCreativeTab(TabArsenal.instance);
 	public static Block powerHub = new BlockPowerHub();
 	public static Block gristGatherer = new BlockGristGatherer();
 	
 	public static Block kringlefucker = new BlockKringlefucker().setCreativeTab(TabArsenal.instance);
+	
+	public static Fluid fluidTea = createFluid("tea", new ResourceLocation("minestuckarsenal", "blocks/tea_still"), new ResourceLocation("minestuckarsenal", "blocks/tea_flow"), "tile.tea");
+	
+	public static Block blockTea = new BlockFluidClassic(fluidTea, Material.WATER){
+		@SideOnly (Side.CLIENT)
+		@Override
+		public Vec3d getFogColor(World world, BlockPos pos, IBlockState state, Entity entity, Vec3d originalColor, float partialTicks)
+		{
+			return new Vec3d(0.5, 0.8, 0.6);
+		}
+	}.setUnlocalizedName("tea").setLightOpacity(1);
 	
 	public static final Fluid moltenCastIron;
 	public static final ResourceLocation moltenCastIronStill = new ResourceLocation(MinestuckArsenal.MODID, "blocks/molten_cast_iron_still");
@@ -69,29 +63,12 @@ public class MinestuckArsenalBlocks {
 		//blocks
 		registry.register(uniqueObject);
 		
-		registry.register(frostLog);
-		registry.register(frostPlanks);
-		registry.register(frostLeaves);
-		registry.register(deadLog);
-		
 		registry.register(sendificator);
 		registry.register(kringlefucker);
 		registry.register(powerHub);
 		registry.register(gristGatherer);
 		
-		registry.register(uraniumBlock);
-		
-		registry.register(chalk);
-		registry.register(chalkPolished);
-		registry.register(chalkBricks);
-		registry.register(chalkBricksChiseled);
-		
-		registry.register(pinkStone);
-		registry.register(pinkStonePolished);
-		registry.register(pinkStoneBricks);
-		registry.register(pinkStoneBricksChiseled);
-		registry.register(pinkStoneBricksCracked);
-		registry.register(pinkStoneBricksMossy);
+		registry.register(blockTea.setRegistryName("block_tea"));
 		
 		registerFluidBlock(moltenCastIron);
 		GameRegistry.registerTileEntity(TileEntityHub.class, "power_hub");
@@ -113,5 +90,18 @@ public class MinestuckArsenalBlocks {
 		Block block = new BlockFluidClassic(fluid, Material.LAVA).setUnlocalizedName(fluid.getName()).setLightLevel(15.0F);
 		block.setRegistryName("cast_iron");
 		registerFluid(fluid);
+	}
+	
+	private static Fluid createFluid(String name, ResourceLocation still, ResourceLocation flowing, String unlocalizedName)
+	{
+		Fluid fluid = new Fluid(name, still, flowing);
+		
+		boolean useFluid = FluidRegistry.registerFluid(fluid);
+		
+		if(useFluid)
+			fluid.setUnlocalizedName(unlocalizedName);
+		else fluid = FluidRegistry.getFluid(name);
+		
+		return fluid;
 	}
 }

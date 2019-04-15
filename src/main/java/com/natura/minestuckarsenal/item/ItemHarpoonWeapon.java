@@ -53,7 +53,7 @@ public class ItemHarpoonWeapon extends Item {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		
 		if(itemstack.getTagCompound() == null) {
-			checkTagCompound(itemstack);
+			checkTagCompound(itemstack, worldIn.getTotalWorldTime());
 		}
 		
 		if(itemstack.getTagCompound().getDouble("LastFired") + fireRate <= worldIn.getTotalWorldTime() && itemstack.getTagCompound().getBoolean("IsLoaded")) {
@@ -75,15 +75,15 @@ public class ItemHarpoonWeapon extends Item {
 				worldIn.spawnEntity(entityHarpoon);
 			}
 
-			setFireTime(itemstack);
-			setUnloaded(itemstack);
+			setFireTime(itemstack, worldIn.getTotalWorldTime());
+			setUnloaded(itemstack, worldIn.getTotalWorldTime());
 			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 		}
 		
 		else if(!itemstack.getTagCompound().getBoolean("IsLoaded")) {
 			if(playerIn.inventory.hasItemStack(new ItemStack(Items.ARROW))) {
 				playerIn.inventory.clearMatchingItems(Items.ARROW, 0, 1, null);
-				setLoaded(itemstack);
+				setLoaded(itemstack, worldIn.getTotalWorldTime());
 				return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 			}
 			
@@ -96,7 +96,7 @@ public class ItemHarpoonWeapon extends Item {
 		
 	}
 	
-	private NBTTagCompound checkTagCompound(ItemStack stack)
+	private NBTTagCompound checkTagCompound(ItemStack stack, long time)
 	{
 		NBTTagCompound tagCompound = stack.getTagCompound();
 		if(tagCompound == null)
@@ -106,7 +106,7 @@ public class ItemHarpoonWeapon extends Item {
 		}
 		if(!tagCompound.hasKey("LastFired"))
 		{
-			tagCompound.setDouble("LastFired", Minecraft.getMinecraft().world.getTotalWorldTime());
+			tagCompound.setDouble("LastFired", time);
 		}
 		if(!tagCompound.hasKey("IsLoaded"))
 		{
@@ -115,41 +115,29 @@ public class ItemHarpoonWeapon extends Item {
 		return tagCompound;
 	}
 	
-	public void setFireTime(ItemStack stack){
-		NBTTagCompound tagCompound = checkTagCompound(stack);
-		tagCompound.setDouble("LastFired", Minecraft.getMinecraft().world.getTotalWorldTime());
+	public void setFireTime(ItemStack stack, long time){
+		NBTTagCompound tagCompound = checkTagCompound(stack, time);
+		tagCompound.setDouble("LastFired", time);
 	}
 	
-	public void setLoaded(ItemStack stack){
-		NBTTagCompound tagCompound = checkTagCompound(stack);
+	public void setLoaded(ItemStack stack, long time){
+		NBTTagCompound tagCompound = checkTagCompound(stack, time);
 		tagCompound.setBoolean("IsLoaded", true);
 	}
 	
-	public void setUnloaded(ItemStack stack){
-		NBTTagCompound tagCompound = checkTagCompound(stack);
+	public void setUnloaded(ItemStack stack, long time){
+		NBTTagCompound tagCompound = checkTagCompound(stack, time);
 		tagCompound.setBoolean("IsLoaded", false);
 	}
 	
-	public boolean isLoaded(ItemStack itemStack)
+	public boolean isLoaded(ItemStack itemStack, long time)
 	{
 		NBTTagCompound tagCompound = itemStack.getTagCompound();
 		if(itemStack.getTagCompound() == null) {
-			checkTagCompound(itemStack);
+			checkTagCompound(itemStack, time);
 		}
 		
 		return itemStack.getTagCompound().getBoolean("IsLoaded");
-	}
-	
-	@Override
-	protected boolean isInCreativeTab(CreativeTabs targetTab)
-	{
-		return targetTab == CreativeTabs.SEARCH || targetTab == MinestuckItems.tabMinestuck;
-	}
-	
-	@Override
-	public CreativeTabs[] getCreativeTabs()
-	{
-		return new CreativeTabs[] {MinestuckItems.tabMinestuck};
 	}
 	
 	protected double getAttackDamage(ItemStack stack)

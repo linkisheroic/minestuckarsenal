@@ -1,14 +1,11 @@
 package com.natura.minestuckarsenal.item;
 
-import org.lwjgl.input.Keyboard;
-
-import com.mraof.minestuck.editmode.ClientEditHandler;
 import com.mraof.minestuck.editmode.ServerEditHandler;
 import com.mraof.minestuck.item.MinestuckItems;
+import com.natura.minestuckarsenal.TabArsenal;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
-import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,7 +16,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import scala.swing.event.Key;
 
 public class ItemVoidRing extends Item implements IBauble {
 	
@@ -36,18 +32,6 @@ public class ItemVoidRing extends Item implements IBauble {
 	public boolean isEnchantable(ItemStack stack) {
 		// TODO Auto-generated method stub
 		return true;
-	}
-	
-	@Override
-	protected boolean isInCreativeTab(CreativeTabs targetTab)
-	{
-		return targetTab == CreativeTabs.SEARCH || targetTab == MinestuckItems.tabMinestuck;
-	}
-	
-	@Override
-	public CreativeTabs[] getCreativeTabs()
-	{
-		return new CreativeTabs[] {MinestuckItems.tabMinestuck};
 	}
 	
 	@Override

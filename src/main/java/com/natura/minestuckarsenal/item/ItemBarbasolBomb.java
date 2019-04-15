@@ -35,19 +35,6 @@ public class ItemBarbasolBomb extends Item {
 	}
 	
 	@Override
-	public CreativeTabs[] getCreativeTabs()
-	{
-		return new CreativeTabs[] {MinestuckItems.tabMinestuck};
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public boolean isFull3D()
-	{
-		return true;
-	}
-	
-	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
         ItemStack itemstack = playerIn.getHeldItem(handIn);

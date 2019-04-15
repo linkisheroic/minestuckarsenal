@@ -2,15 +2,14 @@ package com.natura.minestuckarsenal.item;
 
 import java.util.Random;
 
+import com.mraof.minestuck.alchemy.GristAmount;
+import com.mraof.minestuck.alchemy.GristRegistry;
+import com.mraof.minestuck.alchemy.GristSet;
+import com.mraof.minestuck.alchemy.GristType;
 import com.mraof.minestuck.entity.item.EntityGrist;
-import com.mraof.minestuck.util.GristAmount;
-import com.mraof.minestuck.util.GristRegistry;
-import com.mraof.minestuck.util.GristSet;
-import com.mraof.minestuck.util.GristType;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -43,6 +42,7 @@ public class ItemMineNGrist extends ItemPickaxe {
 		else if(grist == null) {
 			worldIn.spawnEntity(new EntityGrist(worldIn, randX, entityLiving.posY, randZ, new GristAmount(GristType.Build, 1)));
 		}
+		
         return true;
 	}
 	

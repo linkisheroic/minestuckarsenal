@@ -1,7 +1,6 @@
 package com.natura.minestuckarsenal.item;
 
 import com.mraof.minestuck.item.MinestuckItems;
-import com.mraof.minestuck.util.AlchemyRecipeHandler;
 import com.natura.minestuckarsenal.client.SoundEvents;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -27,18 +26,6 @@ public class ItemHorn extends Item {
 		this.maxStackSize = 1;
 		this.setUnlocalizedName("horn");
 		this.setRegistryName("horn");
-	}
-
-	@Override
-	protected boolean isInCreativeTab(CreativeTabs targetTab)
-	{
-		return targetTab == CreativeTabs.SEARCH || targetTab == MinestuckItems.tabMinestuck;
-	}
-	
-	@Override
-	public CreativeTabs[] getCreativeTabs()
-	{
-		return new CreativeTabs[] {MinestuckItems.tabMinestuck};
 	}
 	
 	@Override

@@ -36,18 +36,6 @@ public class ItemLifeRing extends Item implements IBauble {
 	}
 	
 	@Override
-	protected boolean isInCreativeTab(CreativeTabs targetTab)
-	{
-		return targetTab == CreativeTabs.SEARCH || targetTab == MinestuckItems.tabMinestuck;
-	}
-	
-	@Override
-	public CreativeTabs[] getCreativeTabs()
-	{
-		return new CreativeTabs[] {MinestuckItems.tabMinestuck};
-	}
-	
-	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean isFull3D()
 	{

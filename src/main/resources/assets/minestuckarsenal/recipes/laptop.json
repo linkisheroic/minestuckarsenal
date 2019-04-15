@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "QTQ",
+    "QIQ",
+    "QRQ"
+  ],
+  "key": {
+    "Q": {
+      "item": "minecraft:iron_ingot"
+    },
+	"I": {
+		"item": "minecraft:redstone"
+	},
+	"R": {
+		"item": "minestuck:energy_core"
+	},
+	"T": {
+		"item": "minecraft:trapdoor"
+	}
+  },
+  "result": {
+    "item": "minestuck:vanity_laptop",
+    "count": 1,
+	"data": 2
+  }
+}

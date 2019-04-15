@@ -77,7 +77,7 @@ public class ItemGunWeapon extends Item {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		
 		if(itemstack.getTagCompound() == null) {
-			checkTagCompound(itemstack);
+			checkTagCompound(itemstack, worldIn.getTotalWorldTime());
 		}
 		
 		if(itemstack.getTagCompound().getDouble("LastFired") + fireRate <= worldIn.getTotalWorldTime()) {
@@ -93,7 +93,7 @@ public class ItemGunWeapon extends Item {
 				worldIn.spawnEntity(entityBullet);
 			}
 
-			setFireTime(itemstack);
+			setFireTime(itemstack, worldIn.getTotalWorldTime());
 			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 		}
 		
@@ -103,8 +103,8 @@ public class ItemGunWeapon extends Item {
 		
 	}
 	
-	@SideOnly(Side.CLIENT)
-	private NBTTagCompound checkTagCompound(ItemStack stack)
+
+	private NBTTagCompound checkTagCompound(ItemStack stack, long time)
 	{
 		NBTTagCompound tagCompound = stack.getTagCompound();
 		if(tagCompound == null)
@@ -114,27 +114,15 @@ public class ItemGunWeapon extends Item {
 		}
 		if(!tagCompound.hasKey("LastFired"))
 		{
-			tagCompound.setDouble("LastFired", Minecraft.getMinecraft().world.getTotalWorldTime());
+			tagCompound.setDouble("LastFired", time);
 		}
 		return tagCompound;
 	}
 	
-	@SideOnly(Side.CLIENT)
-	public void setFireTime(ItemStack stack){
-		NBTTagCompound tagCompound = checkTagCompound(stack);
-		tagCompound.setDouble("LastFired", Minecraft.getMinecraft().world.getTotalWorldTime());
-	}
-	
-	@Override
-	protected boolean isInCreativeTab(CreativeTabs targetTab)
-	{
-		return targetTab == CreativeTabs.SEARCH || targetTab == MinestuckItems.tabMinestuck;
-	}
-	
-	@Override
-	public CreativeTabs[] getCreativeTabs()
-	{
-		return new CreativeTabs[] {MinestuckItems.tabMinestuck};
+
+	public void setFireTime(ItemStack stack, long time){
+		NBTTagCompound tagCompound = checkTagCompound(stack, time);
+		tagCompound.setDouble("LastFired", time);
 	}
 	
 	protected double getAttackDamage(ItemStack stack)

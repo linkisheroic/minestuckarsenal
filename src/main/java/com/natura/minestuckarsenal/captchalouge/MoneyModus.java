@@ -3,6 +3,7 @@ package com.natura.minestuckarsenal.captchalouge;
 import java.util.Iterator;
 
 import com.mraof.minestuck.MinestuckConfig;
+import com.mraof.minestuck.alchemy.AlchemyRecipes;
 import com.mraof.minestuck.client.gui.captchalouge.SylladexGuiHandler;
 import com.mraof.minestuck.inventory.captchalouge.CaptchaDeckHandler;
 import com.mraof.minestuck.inventory.captchalouge.Modus;
@@ -11,7 +12,6 @@ import com.mraof.minestuck.network.MinestuckChannelHandler;
 import com.mraof.minestuck.network.MinestuckPacket;
 import com.mraof.minestuck.network.PlayerDataPacket;
 import com.mraof.minestuck.network.MinestuckPacket.Type;
-import com.mraof.minestuck.util.AlchemyRecipeHandler;
 import com.mraof.minestuck.util.MinestuckPlayerData;
 import com.mraof.minestuck.util.MinestuckPlayerData.PlayerData;
 import com.natura.minestuckarsenal.client.MoneyGuiHandler;
@@ -193,7 +193,7 @@ public class MoneyModus extends Modus
 			if(asCard)
 			{
 				size--;
-				item = AlchemyRecipeHandler.createCard(item, false);
+				item = AlchemyRecipes.createCard(item, false);
 			}
 			
 			data.boondollars -= items.getCount();

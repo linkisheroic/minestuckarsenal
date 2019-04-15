@@ -425,6 +425,8 @@ tile.pinkStoneBricksChiseled.name=Chiseled Pink Stone Bricks
 tile.pinkStoneBricksCracked.name=Cracked Pink Stone Bricks
 tile.pinkStoneBricksMossy.name=Mossy Pink Stone Bricks
 
+tile.tea.name=Tea
+
 group.tabArsenal=Minestuck Arsenal
 itemGroup.tabArsenal=Minestuck Arsenal
 
@@ -505,6 +507,10 @@ grist.polychromite=Polychromite
 grist.rainbow=Rainbow
 grist.opal=Opal
 grist.plasma=Plasma
+
+land.sugar=Sugar
+land.saccharin=Saccharin
+land.little_cubes=Little Cubes
 
 material.cruxite.name=Cruxite
 modifier.carvable.name=Carvable

@@ -76,21 +76,21 @@ public class ItemDualGunWeapon extends ItemWeapon {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		
 		if(itemstack.getTagCompound() == null) {
-			checkTagCompound(itemstack);
+			checkTagCompound(itemstack, worldIn.getTotalWorldTime());
 		}
 		
 		if(playerIn.isSneaking()) {
 			if(itemstack.getTagCompound().getBoolean("IsDrawn")) {
-				sheath(itemstack);
+				sheath(itemstack, worldIn.getTotalWorldTime());
 				return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 			}
 			else {
-				draw(itemstack);
+				draw(itemstack, worldIn.getTotalWorldTime());
 				return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 			}
 		}
 		
-		if(itemstack.getTagCompound().getBoolean("IsDrawn") && !playerIn.isSneaking()) {
+		else if(itemstack.getTagCompound().getBoolean("IsDrawn") && !playerIn.isSneaking()) {
 			if(itemstack.getTagCompound().getDouble("LastFired") + fireRate <= worldIn.getTotalWorldTime()) {
 				if (!playerIn.capabilities.isCreativeMode)
 				{
@@ -104,7 +104,7 @@ public class ItemDualGunWeapon extends ItemWeapon {
 					worldIn.spawnEntity(entityBullet);
 				}
 
-				setFireTime(itemstack);
+				setFireTime(itemstack, worldIn.getTotalWorldTime());
 				return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 			}
 		
@@ -173,7 +173,7 @@ public class ItemDualGunWeapon extends ItemWeapon {
         }
     }
 	
-	private NBTTagCompound checkTagCompound(ItemStack stack)
+	private NBTTagCompound checkTagCompound(ItemStack stack, long time)
 	{
 		NBTTagCompound tagCompound = stack.getTagCompound();
 		if(tagCompound == null)
@@ -184,7 +184,7 @@ public class ItemDualGunWeapon extends ItemWeapon {
 		
 		if(!tagCompound.hasKey("LastFired"))
 		{
-			tagCompound.setDouble("LastFired", Minecraft.getMinecraft().world.getTotalWorldTime());
+			tagCompound.setDouble("LastFired", time);
 		}
 		
 		if(!tagCompound.hasKey("IsDrawn"))
@@ -195,32 +195,19 @@ public class ItemDualGunWeapon extends ItemWeapon {
 		return tagCompound;
 	}
 	
-	public void setFireTime(ItemStack stack){
-		NBTTagCompound tagCompound = checkTagCompound(stack);
-		tagCompound.setDouble("LastFired", Minecraft.getMinecraft().world.getTotalWorldTime());
+	public void setFireTime(ItemStack stack, long time){
+		NBTTagCompound tagCompound = checkTagCompound(stack, time);
+		tagCompound.setDouble("LastFired", time);
 	}
 	
-	public void sheath(ItemStack stack){
-		NBTTagCompound tagCompound = checkTagCompound(stack);
+	public void sheath(ItemStack stack, long time){
+		NBTTagCompound tagCompound = checkTagCompound(stack, time);
 		tagCompound.setBoolean("IsDrawn", false);
 	}
 	
-	public void draw(ItemStack stack){
-		NBTTagCompound tagCompound = checkTagCompound(stack);
+	public void draw(ItemStack stack, long time){
+		NBTTagCompound tagCompound = checkTagCompound(stack, time);
 		tagCompound.setBoolean("IsDrawn", true);
-	}
-		
-	
-	@Override
-	protected boolean isInCreativeTab(CreativeTabs targetTab)
-	{
-		return targetTab == CreativeTabs.SEARCH || targetTab == MinestuckItems.tabMinestuck;
-	}
-	
-	@Override
-	public CreativeTabs[] getCreativeTabs()
-	{
-		return new CreativeTabs[] {MinestuckItems.tabMinestuck};
 	}
 	
 	protected double getFireDamage(ItemStack stack)

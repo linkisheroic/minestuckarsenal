@@ -1,17 +1,11 @@
 package com.natura.minestuckarsenal;
 
-import com.mraof.minestuck.Minestuck;
-import com.mraof.minestuck.util.GristHelper;
-import com.mraof.minestuck.util.GristType;
-
-import net.minecraft.item.Item;
+import com.mraof.minestuck.alchemy.GristType;
+import static com.mraof.minestuck.alchemy.GristHelper.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.IForgeRegistryEntry;
-import static com.mraof.minestuck.util.GristHelper.secondaryGristMap;
 
 public class ArsenalGrist {
 

@@ -1,8 +1,6 @@
 package com.natura.minestuckarsenal.item;
 
 import com.mraof.minestuck.item.MinestuckItems;
-import com.mraof.minestuck.util.AlchemyRecipeHandler;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItemFrame;
 import net.minecraft.entity.player.EntityPlayer;
@@ -27,18 +25,6 @@ public class ItemSBAHJifier extends Item {
 		this.setMaxDamage(64);
 		this.setUnlocalizedName("sbahjifier");
 		this.setRegistryName("sbahjifier");
-	}
-
-	@Override
-	protected boolean isInCreativeTab(CreativeTabs targetTab)
-	{
-		return targetTab == CreativeTabs.SEARCH || targetTab == MinestuckItems.tabMinestuck;
-	}
-	
-	@Override
-	public CreativeTabs[] getCreativeTabs()
-	{
-		return new CreativeTabs[] {MinestuckItems.tabMinestuck};
 	}
 	
 	@Override
